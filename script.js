@@ -1,7 +1,7 @@
 const header = document.querySelector("header");
 const footer = document.querySelector(".footer-section");
 const loadElement = (element, fileName) => {
-  fetch(`/placeholder/common_layout/${fileName}.html`)
+  fetch(`/common_layout/${fileName}.html`)
     .then(res => {
       return res.text();
     })
@@ -49,7 +49,7 @@ function activeLink (location)
   switch(location)
   {
     case "Form":
-      window.open("https://docs.google.com/forms/d/e/1FAIpQLSchFxqZAkcTmViyRaQyjdHztcAAeQj3RTU6qOOspBVS-yFOFQ/viewform?usp=sf_link");
+      window.open("https://docs.google.com/forms/d/e/1FAIpQLSfbUlTictbL5yUoAIgOM0Z20Z40B9yUT6DDIId6Nns3BavJNg/viewform?usp=sf_link");
       // window.location.href = "about.html";
       break;
     case "Contact":
