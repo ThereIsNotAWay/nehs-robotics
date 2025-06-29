@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ news_article.news_headline }}{% endblock %}
+
+{% block content %}
+  <div class="center-all dark-section">
+    <article class="center-all news-article">
+      <section class="news-title">
+        <div class="headers">
+          <h1>{{ news_article.news_headline }}</h1>
+        </div>
+        <div class="news-publication">
+          <p>Author: {{ news_article.author }}</p>
+          <p>{{ news_article.publication_date }}</p>
+        </div>
+      </section>
+      <section class="news-section-image">
+        <div>
+          <img src="{{ url_for('static', filename='images/' + news_article.image_url) }}" alt="image doesnt exist noob" width="100%" height="100%">
+          <span><em>{{ news_article.image_date }} </em></span>
+        </div>
+      </section>
+      <section class="news-section-text">
+        <h3>{{ news_article.news_sub_headline }}</h3>
+        <p>
+          {{ news_article.news_text }}
+        </p>
+      </section>
+      <section class="news-blank-section"></section>
+    </article>
+  </div>
+{% endblock %}

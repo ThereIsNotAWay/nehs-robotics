@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %} Robotics News {% endblock %}
+
+{% block content %}
+
+<section class="dark-section center-all" style="gap: 4rem">
+  {% for news in news_articles %}
+    {% if news_articles|length > 0 and news|is_first(news_articles) %}
+      <div class="text-image spread-space flex-horizontal flex-wrap">
+        <div class="smaller_image">
+          <img class="smaller_image small-border-radius" src="{{ url_for('static', filename='images/' + news['image_url']) }}" width="100%" height="100%">
+        </div>
+        <div class="text">
+          <div>
+            <p>{{ news }}</p>
+          </div>
+          <div class="news-feature-read-more">
+            <a href="{{ url_for('news.retrieve_news', news_headline=news['news_headline'].replace(' ', '-')|lower) }}">Read More</a>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+      <div class="news-catalog">
+    {% if news_articles|length > 1 and not news|is_first(news_articles) %}
+        <div class="news-feature">
+          <div class="news-feature-image">
+            <img class="small-border-radius" src="{{ url_for('static', filename='images/' + news['image_url']) }}" width="100%" height="100%">
+          </div>
+          <div class="news-feature-heading">
+            <h2>{{ news }}</h2>
+          </div>
+          <div class="news-feature-read-more">
+            <a href="{{ url_for('news.retrieve_news', news_headline=news['news_headline'].replace(' ', '-')|lower) }}">Read More</a>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</section>
+<!-- <section class="center-all dark-section" style="gap: 3rem;">
+  {% for news in news_articles %}
+    <div class="center-all">
+      <div>{{ news['news_headline'] }}</div>
+      <div>"{{ news['author'] }}"</div>
+      <div>{{ news['publication_date'] }}</div>
+      <div>{{ news['image_url'] }}<img src="{{ url_for('static', filename='images/' + news['image_url'])}}"></div>
+      <div>{{ news['image_date'] }}</div>
+      <div>{{ news['news_sub_headline'] }}</div>
+      <div>{{ news['news_text'] }}</div>
+    </div>
+  {% endfor %}
+</section> -->
+
+{% endblock %}
