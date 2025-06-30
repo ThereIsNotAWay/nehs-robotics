@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Page Not Found {% endblock %}
+
+{% block content %}
+<div class="wip">
+  <img src="{{ url_for('static', filename='images/not-found-raccoon.png') }}" alt="A raccoon sitting next to a golf club.">
+  <h1 style="margin-bottom: 0.3em; color: #691f20;">
+    Uh Oh!
+  </h1>
+  <span>
+    The page could not be found (may still be in development).
+  </span>
+</div>
+{% endblock %}

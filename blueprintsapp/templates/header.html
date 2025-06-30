@@ -1,0 +1,40 @@
+<nav>
+  <div class="logo">
+   <a href=""><img src="{{ url_for('static', filename='images/robotics-logo.png') }}"><span style="margin-left: 10px;">Northeast HS Robotics</span></a>
+  </div>
+  <ul class="navlinks">
+   <li><a href="{{ url_for('main.index') }}">Home</a></li>
+   <li><a href="{{ url_for('main.search_main_page', page_name='about') }}">About</a></li>
+   <li><a href="{{ url_for('news.display_news_articles') }}">News</a></li>
+   <li><a href="{{ url_for('gallery.season_gallery') }}">Gallery</a></li>
+   <li><a href="{{ url_for('resources.all_resources') }}">Resources</a></li>
+   <li><a href="{{ url_for('main.search_main_page', page_name='contacts') }}">Contact</a></li>
+   <!-- <li><a href="{{ url_for('main.search_main_page', page_name='shop') }}">Shop</a></li> -->
+  </ul>
+  <div class="flex-column center-all" id="nav-icon" onclick="showNavLinks('block')">
+    <hr class="semi-large-border-radius nav-block">
+    <hr class="semi-large-border-radius nav-block">
+    <hr class="semi-large-border-radius nav-block">
+  </div>
+</nav>
+<div id="nav-screen">
+  
+  <div class="" id="nav-screen-links">
+    <div class="flex-horizontal" style="width: 100%;">
+      <div class="flex-horizontal title" style="display: flex; justify-content: left; padding: 20px; flex: 1;">
+        <img src="{{ url_for('static', filename='images/robotics-logo.png') }}">
+        <h1 style="font-size: large;">Northeast HS Robotics</h1>
+      </div>
+      <div style="margin-right: 20px;" onclick="showNavLinks('none')">Close</div>
+    </div>
+    
+    <a href="{{ url_for('main.index') }}">Home</a>
+    <a href="{{ url_for('main.search_main_page', page_name='about') }}">About</a>
+    <a href="{{ url_for('news.display_news_articles') }}">News</a>
+    <a href="{{ url_for('gallery.season_gallery') }}">Gallery</a>
+    <a href="{{ url_for('resources.all_resources') }}">Resources</a>
+    <a href="{{ url_for('main.search_main_page', page_name='contacts') }}">Contact</a>
+    <!-- <a href="{{ url_for('main.search_main_page', page_name='shop') }}">Shop</a> -->
+  </div>
+  
+</div>

@@ -1,0 +1,47 @@
+
+
+<div class="footer-top flex-horizontal flex-wrap">
+  <div>
+    <div class="footer-join-part">
+      <h2>Join Today</h2>
+      <p>Our team is looking for aspiring people to build for and conquer the future.</p>
+      <button>Join</button>
+    </div>
+    <div class="flex-horizontal socials-icons">
+      <a href="https://www.instagram.com/nehs.robotics?igsh=cHdqdXdnZGxoOGlz&utm_source=qr"><img src="{{ url_for('static', filename='images/instagram.png') }}  "></a>
+      <a href="https://www.tiktok.com/@nehs.vikings.10143?_t=ZT-8xTuCBoBU5X&_r=1"><img src="{{ url_for('static', filename='images/tiktok.png') }}"></a>
+      <!-- <a href=""><img src="/images/"></a>
+      <a href=""><img src="/images/"></a>
+      <a href=""><img src="/images/"></a> -->
+    </div>
+  </div>
+  <div class="footer-page-links-container">
+    <div class="flex-column footer-page-links">
+      <ul>
+        <li><span>Information</span></li><hr>
+        <li><a href="{{ url_for('main.search_main_page', page_name='about') }}">About</a></li>
+        <li><a href="{{ url_for('news.display_news_articles') }}">News</a></li>
+        <li><a href="{{ url_for('main.search_main_page', page_name='contacts') }}">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="flex-column footer-page-links">
+      <ul>
+        <li><span>Competitions</span></li><hr>
+        <li><a href="{{ url_for('resources.competition_resources', competition='ftc') }}">FTC</a></li>
+        <li><a href="{{ url_for('resources.competition_resources', competition='frc') }}">FRC</a></li>
+        <li><a href="{{ url_for('resources.competition_resources', competition='seaglide') }}">SeaGlide</a></li>
+        <li><a href="{{ url_for('resources.competition_resources', competition='seaperch') }}">SeaPerch</a></li>
+      </ul>
+    </div>
+    
+  </div>
+</div>
+<div class="footer-bottom">
+  <div class="container">
+    <div class="flex-horizontal title ">
+      <img src="{{ url_for('static', filename='images/robotics-logo.png') }}">
+      <h2>Northeast Robotics</h2>
+    </div>
+  </div>
+
+</div>

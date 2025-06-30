@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}No Text{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="shortcut icon" type="x-icon" href=" {{ url_for('static', filename='images/robotics-logo.png')}} ">
+  <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
+  {% block external_files %}{% endblock %}
+</head>
+<body>
+  <header>{% include 'header.html' %}</header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="footer-section">{% include 'footer.html' %}</footer>
+</body>
+</html>
