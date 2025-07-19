@@ -1,8 +1,8 @@
 from blueprintsapp.app import db
 
-class newsarticle(db.Model):
+class NewsArticle(db.Model):
   
-  __table_name__ = 'news_article'
+  __tablename__ = 'newsarticle'
 
   news_headline = db.Column(db.String(255), primary_key=True)
   author = db.Column(db.String(50))
