@@ -1,17 +1,17 @@
-const header = document.querySelector("header");
-const footer = document.querySelector(".footer-section");
-const loadElement = (element, fileName) => {
-  fetch(`/common_layout/${fileName}.html`)
-    .then(res => {
-      return res.text();
-    })
-    .then(html => {
-      element.innerHTML = html;
-    })
-};
-loadElement(header, 'header');
-loadElement(footer, 'footer');
-loadElement(document.querySelector(".wip"), 'wip_page');
+// const header = document.querySelector("header");
+// const footer = document.querySelector(".footer-section");
+// const loadElement = (element, fileName) => {
+//   fetch(`/common_layout/${fileName}.html`)
+//     .then(res => {
+//       return res.text();
+//     })
+//     .then(html => {
+//       element.innerHTML = html;
+//     })
+// };
+// loadElement(header, 'header');
+// loadElement(footer, 'footer');
+// loadElement(document.querySelector(".wip"), 'wip_page');
 
 
 const observer = new IntersectionObserver((entries) => {
@@ -36,13 +36,27 @@ hiddenElements(document.querySelectorAll('.hidden-left'));
 hiddenElements(document.querySelectorAll('.hidden-right'));
 hiddenElements(document.querySelectorAll('.hidden-popup'));
 hiddenElements(document.querySelectorAll('.hidden-popdown'));
-// const hiddenElementsLeft = document.querySelectorAll('.hidden-left');
-// const hiddenElementsRight = document.querySelectorAll('.hidden-right');
-// const hiddenElementsPopup = document.querySelectorAll('.hidden-popup');
-// hiddenElementsLeft.forEach((el) => observer.observe(el)), hiddenElementsRight.forEach((el) => observer.observe(el));
-// hiddenElementsPopup.forEach((el) => observer.observe(el));
 
+const contact = document.querySelector('.contact-redirect');
+contact.addEventListener('click', e => {
+  apiRedirectButtons("contacts")
+});
 
+async function apiRedirectButtons(pageName) {
+  try {
+    const response = await fetch(`/api/${pageName}`);
+
+    if (response.ok) {
+      window.location.href = `/${pageName}`;
+    }
+    else {
+      throw new error("it didnt work noob");
+    }
+  }
+  catch (error) {
+    console.error(error);
+  }
+}
 
 function activeLink (location)
 {
@@ -50,15 +64,7 @@ function activeLink (location)
   {
     case "Form":
       window.open("https://docs.google.com/forms/d/e/1FAIpQLSfbUlTictbL5yUoAIgOM0Z20Z40B9yUT6DDIId6Nns3BavJNg/viewform?usp=sf_link");
-      // window.location.href = "about.html";
       break;
-    case "Contact":
-      window.location.href = "contacts.html";
-      break;
-    case "Shop":
-      window.open("");
-      break;
-    
   }
 }
 
@@ -82,6 +88,7 @@ function changeSplineQuality (quality, spline) {
 }
 
 let currentSpline = 0;
+iterateSplineObj(0)
 
 function iterateSplineObj (number) {
   const splines = document.getElementsByClassName('spline-display');

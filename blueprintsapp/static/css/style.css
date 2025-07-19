@@ -654,7 +654,8 @@ nav a:hover::before {
 .socials-icons {
 	width: 150px;
 	align-self: self-start;
-	justify-content: space-between;
+	/* justify-content: space-between; */
+	gap: 0.5rem;
 }
 
 
@@ -811,6 +812,14 @@ nav a:hover::before {
 
 .text-image .ds {
   filter: drop-shadow(10px 10px 8px #fff);
+}
+
+.text-image .smaller_image {
+	min-width: 325px;
+	max-width: 500px;
+	width: 100%;
+	min-height: 250px;
+	max-height: 450px;
 }
 
 .text-image .wider-image {
@@ -1540,28 +1549,33 @@ nav a:hover::before {
 }
 
 .gallery-seasons-container {
-	max-width: 600px;
+	max-width: 1000px;
 	min-width: 350px;
 	width: 100%;	
 	min-height: 120px;
-	max-height: 180px;
+	max-height: 360px;
 	padding: 24px;
 	display: flex;
-	gap: 100px;
-	scroll-snap-type: x proximity;
-	/* justify-content: space-evenly; */
-	scroll-margin-inline-start: 50px;
+	gap: 4rem;
 }
 
-.season-container {
-	scroll-snap-align: center;
-	min-width: 100px;
-	max-width: 150px;
+.gallery-seasons-inner-container {
 	width: 100%;
+	display: flex;
+	gap: 2rem;
 }
 
-.season-container > * {
-	font-size: 1.5em;
+.gallery-seasons-header {
+	font-size: 1.5rem;
+}
+
+.seasons-container {
+	display: flex;
+	gap: 1.5rem;
+	width: 100%;
+	justify-content: left;
+	font-size: 1.15rem;
+	letter-spacing: 0.125rem;
 }
 
 .photo-gallery {
@@ -1802,7 +1816,7 @@ nav a:hover::before {
 }
 
 #home-image {
-	background-image: linear-gradient(to right, rgba(0,0,0, 0.8), rgba(255, 255, 255, 0.15)), url("images/Drone-hovering-over-water.jpg");
+	background-image: linear-gradient(to right, rgba(0,0,0, 0.8), rgba(255, 255, 255, 0.15)), url("../images/Drone-hovering-over-water.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; 
 	/* background-image: url("images/layered-peaks-haikei.png"); */
@@ -1946,24 +1960,25 @@ nav a:hover::before {
 .news-catalog {
 	display: flex; 
 	justify-content: center;
-	gap: 2rem; 
-	flex-direction: row; 
-	flex-wrap: wrap;
-	max-width: 1440px;
+	align-items: center;
+	gap: 3rem; 
   min-width: 375px;
+	max-width: 1440px;
 }
 
-.news-feature {
+.news-feature, .news-feature-blank {
 	/* background-color: red; */
-	min-width: 375px;
-	max-width: 450px;
-	width: 100%;
+	width: 375px;
 	min-height: 500px;
 	padding: 12px;
+	/* display: flex;
+	flex-direction: column;
+	align-self: first baseline; */
 }
 
 .news-feature-image {
 	margin-bottom: 2rem;
+	height: 250px;
 }
 
 .news-feature-heading {
