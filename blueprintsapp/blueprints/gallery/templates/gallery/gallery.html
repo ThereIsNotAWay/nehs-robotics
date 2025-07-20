@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}NEHS Robotics Gallery {% endblock %}
+
+{% block content %}
+  <!-- <section class="dark-section center-all section-1-offset" >
+    <div class="title-headers center-all">
+      <h1>The Gallery of Northeast High School Robotics</h1>
+      <h2>Current hosts seasons and photo archives</h2>
+    </div>
+  </section> -->
+  <section class="dark-section center-all section-1-offset">
+    <div class="center-all" style="max-width: 1440px; width: 100%;">
+      <div class="title-headers center-all">
+        <!-- <h1>Seasons</h1> -->
+        <h1>The Gallery of Northeast High School Robotics</h1>
+        <h2>Current hosts seasons and photo archives</h2>
+      </div>
+      <div class="flex-column gallery-seasons-container background-border" style="margin-top: 40px;">
+        <div class="flex-column gallery-seasons-inner-container">
+          <div class="gallery-seasons-header">
+            <h3>Past Seasons</h3>
+          </div>
+          <div class="flex-horizontal flex-wrap seasons-container">
+            <a href="{{ url_for('gallery.team_season', season='2022-2023') }}">2022 - 2023</a>
+            <a href="{{ url_for('gallery.team_season', season='2023-2024') }}">2023 - 2024</a>
+            <a href="{{ url_for('gallery.team_season', season='2024-2025') }}">2024 - 2025</a>
+          </div>
+        </div>
+        <div class="flex-column gallery-seasons-inner-container">
+          <div class="gallery-seasons-header">
+            <h3>Future Seasons</h3>
+          </div>
+          <div class="flex-horizontal flex-wrap seasons-container">
+            <a href="{{ url_for('gallery.team_season', season='2025-2026') }}">2025 - 2026</a>
+            <a href="{{ url_for('gallery.team_season', season='2026-2027') }}">2026 - 2027</a>
+            <a href="{{ url_for('gallery.team_season', season='2027-2028') }}">2027 - 2028</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+{% endblock %}

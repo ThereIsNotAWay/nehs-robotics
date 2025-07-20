@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ season.description_season|format_season }} Season {% endblock %}
+
+{% block content %}
+
+<section class="dark-section center-all section-1-offset">
+  <div class="center-all">
+    <div class="headers">
+      <h1>Photo Gallery</h1>
+    </div>
+    <div class="photo-gallery flex-horizontal flex-wrap">
+    {% for image in images %}
+      <div class="photo-gallery-img {{ image.image_url|image_size_check }}">
+        <img src="{{ url_for('static', filename='images/' + image.image_url ) }}" width="100%" height="100%">
+        {% if image.image_caption|has_caption %}
+          <div class="photo-gallery-img-caption">
+            <p>{{ image.image_caption }}</p>
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+  
+
+</section>
+<section class="dark-section">
+  <div>
+    
+  </div>
+  <div>
+    
+  </div>
+</section>
+
+{% endblock %}
