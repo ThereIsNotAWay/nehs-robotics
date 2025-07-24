@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}NEHS Robotics Resources{% endblock %}
+
+{% block content %}
+  <section id="background-competition" class="center-all section-1-offset light-section">
+    <div class="headers">
+      <h1>Competitions</h1>
+    </div>
+    <div class="flex-horizontal flex-wrap logo-images">
+      <a href="{{ url_for('resources.competition_resources', competition='ftc') }}" onmouseover="changeBackgroundImage('FTC')" onmouseleave="changeBackgroundImage()"><img src="{{ url_for('static', filename='images/FTC.png') }}" class="logo-links"></a>
+      <a href="{{ url_for('resources.competition_resources', competition='frc') }}" onmouseover="changeBackgroundImage('FRC')" onmouseleave="changeBackgroundImage()"><img src="{{ url_for('static', filename='images/FRC.png') }}" class="logo-links"></a>
+    </div>
+    <div class="flex-horizontal flex-wrap logo-images">
+      <a href="{{ url_for('resources.competition_resources', competition='seaglide') }}" onmouseover="changeBackgroundImage('SeaGlide')" onmouseleave="changeBackgroundImage()"><img src="{{ url_for('static', filename='images/SeaGlide.png') }}" class="logo-links"></a>
+      <a href="{{ url_for('resources.competition_resources', competition='seaperch') }}" onmouseover="changeBackgroundImage('SeaPerch')" onmouseleave="changeBackgroundImage()"><img src="{{ url_for('static', filename='images/SeaPerch.png') }}" class="logo-links"></a>
+    </div>  
+  </section>
+{% endblock %}
