@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}NEHS Robotics Contact{% endblock %}
+{% block external_files %}
+  <script type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function(){
+        emailjs.init({
+          publicKey: "",
+        });
+    })();
+  </script>
+{% endblock %}
+
+{% block content %}
+  <section class="center-all dark-section " style="min-height: 100dvh;">
+    <div class=" contact-container flex-horizontal flex-wrap">
+      <div>
+        <div class="headers">
+          <h1>Have any questions? Email us.</h1>
+          <h2>We'll try to get back to you as soon as possible.</h2>
+        </div>
+        <div class="text">
+          <span>Contact Email: mcione@philasd.org</span>
+        </div>
+      </div>
+      <form class="contact-form-container">
+        <div class="contact-inputs">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Full name" required>
+        </div>
+        <div class="contact-inputs">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your School Email" required>
+        </div>
+        <div class="contact-inputs">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="Subject" required>
+        </div>
+        <div class="contact-inputs">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Message" style="width: 100%;" required></textarea>
+        </div>
+        <button type="button" onclick="sendEmail()">Submit</button>
+      </form>
+    </div>
+  </section>
+{% endblock %}
