@@ -33,7 +33,12 @@ header {
   height: clamp(3.33333em, calc(3vh + 7em), 7em);
   background: #F4EDEC;
   z-index: 500;
+  opacity: 100%;
+}
+
+.header-scrolled {
   opacity: 95%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 
 nav {
