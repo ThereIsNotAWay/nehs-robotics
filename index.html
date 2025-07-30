@@ -106,24 +106,29 @@
       <section id="design-gallery">
         <div class="design-gallery-container">
           <h1>Our Designs</h1>
-          <button onclick="changeSplineQuality('2d')" class="spline-buttons">2D Models</button>
-          <button onclick="changeSplineQuality('3d')" class="spline-buttons">3D Models</button>
+          <button onclick="changeQuality('2d')" class="spline-buttons">2D Models</button>
+          <button onclick="changeQuality('3d')" class="spline-buttons">3D Models</button>
           <div class="gallery-wrapper">
             <!-- <button id="prev-slide" class="slide-button material-symbols-rounded">chevron_left</button> -->
             <div class="image-list">
               <img src="images/2023-2024-FTC-Robot.png" alt="FTC 2023-24 Season Robot" class="image-item">
               <img src="images/2023-2024-SeaGlide-Drone.png" alt="SeaGlide 2023-24 Season Glider" class="image-item">
             </div>
+            <div class="spline-obj" style="display: none;">
+              <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.6/build/spline-viewer.js"></script>
+              <spline-viewer loading-anim-type="spinner-big-light" url="https://prod.spline.design/cyRb28KbVlE6Y-kV/scene.splinecode" class="spline-obj"></spline-viewer>
+              <spline-viewer loading-anim-type="spinner-big-light" url="https://prod.spline.design/9gTrSqNmXG8fab9J/scene.splinecode" class="spline-obj"></spline-viewer>
+            </div>
             <!-- <button id="next-slide" class="slide-button material-symbols-rounded">chevron_right</button> -->
           </div>
-          <div class="x-scrollbar">
+    <!--  <div class="x-scrollbar">
             <div class="scroll-track">
                 <div class="scroll-thumb"></div>
             </div>
           </div>
           <div class="right-align-text">
             <a href="/gallery.html">see more ></a>
-          </div>
+          </div> -->
         </div>
       </section>
     </main>

@@ -45,7 +45,28 @@ function showMenu() {
 
 }
 
+function changeQuality (quality) {
 
+  const images = document.getElementsByClassName("image-list");
+  const splines = document.getElementsByClassName("spline-obj");
+
+  let i = 0;
+
+  if (quality == "2d") {
+    for (i = 0; i < images.length; i++) {
+      splines[i].style.display = "none";
+      images[i].style.display = "flex";
+    }
+  } else if (quality == "3d") {
+    for (i = 0; i < splines.length; i++) {
+      images[i].style.display = "none";
+      splines[i].style.display = "flex";
+    }
+  }
+
+}
+
+/* Currently inactive.
 //Slide images according to button clicks.
 //Adapted from: https://youtu.be/PsNaoDhzQm0?si=ctjat-7dmmrXscrA
 const initSlider = () => {
@@ -110,3 +131,5 @@ const initSlider = () => {
 }
 
 window.addEventListener("load", initSlider);
+
+*/
