@@ -1,282 +1,164 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEHS Robotics</title>
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="shortcut icon" type="x-icon" href="images/robotics-logo.png">
+    <title>Viking Robotics</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="x-icon" href="images/logo.png">
     <script defer src="script.js"></script>
+    <!-- Necessary for Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!-- Necessary for Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
+    <!-- Preload Images -->
+    <link rel="preload" href="images/landing/01.png" as="image">
+    <link rel="preload" href="images/landing/18.jpg" as="image">
+    <link rel="preload" href="images/landing/19.jpg" as="image">
+    <link rel="preload" href="images/landing/24.jpg" as="image">
   </head>
   <body>
+    <!-- Website Header -->
     <header>
-      <a href="common_layout/header.html" style="display: flex; align-items: center;">Ok Why do you have js disabled?</a>
+      <!-- <a href="common_layout/header.html" style="display: flex; align-items: center;"></a> -->
+      <nav>
+        <div class="logo">
+          <a href="/index.html"><img class="file" src="../images/resizedlogo.png"><span class="logo-text">VIKING ROBOTICS</span></a>
+        </div>
+        <a onclick="showMenu()" href="#" class="menu-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+        <ul class="navlinks">
+          <li><a href="/about.html">ABOUT</a></li>
+          <li><a href="/resources.html">RESOURCES</a></li>
+          <li><a href="/gallery.html">GALLERY</a></li>
+          <li><a href="/news.html">NEWS</a></li>
+          <li><a href="/store.html">STORE</a></li>
+        </ul>
+      </nav>
     </header>
-    <main class="">
-      <section id="home-image" class="center-all dark-section">
-        <div class="home-overlay-box">
-          <h>Northeast Vikings</h>
-          <h2>Robotics</h2>
-          <p>Empowering Tomorrows Innovators. Join Our Robotics Team Today</p>
-          <div class="buttons">
-            <button onclick="activeLink('Form')">Join Today</button>
-            <button onclick="activeLink('Contact')">Contact Us</button>
-          </div>
+    <main class="main">
+      <!-- Landing Image -->
+      <section id="home-image-container">
+        <div class="background-container">
+          <img class="showing background" src="images/landing/01.png">
+          <img class="background" src="images/landing/18.jpg">
+          <img class="background" src="images/landing/19.jpg">
+          <img class="background" src="images/landing/24.jpg">
+        </div>
+        <div class="landing">
+          <h1>Empowering tomorrow's innovators.</h1>
+          <p>Based in Philadelphia | Northeast High School</p>
+        </div>
+        <div class="current-highlight">
+          <h2>Season Highlights</h2>
+          <p><em>Awarded with the Rookie All Star Award at the FMA District Bensalem Event, the Vikings pressed forward to take first place at the FMA District Springside Chestnut Hill Event.</em></p>
         </div>
       </section>
-      <section class="center-all section-text-image dark-section">
-        <div>
-          <div class="image ">
-            <img src="images/hands-on-work.png" width="100%" height="100%"class="small-border-radius">
-          </div>
-          <div class="text center-all small-border-radius r1">
-            <h1>
-              Our Vision Statement
-            </h1>
-            <hr>
-            <p>
-              We are trying to build a comprehensive team with passionate members to step into the STEM world of fields.
-              <!-- We are trying to build a comprehensive team with members that are willing to dedicate time and effort to becoming a strong competitor against other teams. -->
-            </p>
-          </div>
+      <!-- Redirect Containers -->
+      <section id="redirect-containers">
+        <div class="choice-a">
+          <h1>Already an Active Member?</h1>
+          <p><a href="resources.html" target="_self">Start here.</a></p>
         </div>
-
-      </section>
-      <!--<section class="center-all dark-section" style="position: relative;">
-        <div style=" width: 100%; max-width: 1440px;">
-          <div class="center-all" style="margin-bottom: 80px;">
-            <h1 style="font-size: xx-large;">
-              Meet Our Team
-            </h1>
-          </div>
-          <div class="flex-horizontal flex-wrap" style="display: flex; justify-content: center; gap: 3rem;">
-            <div class="flex-column">
-              <div class="semi-large-border-radius home-column">
-                <img src="/placeholder/images/" class="semi-large-border-radius" width="100%" height="100%">
-              </div>
-              <div class="home-column-box small-border-radius center-all">
-                <h2>Person</h2>
-                <span>Role</span>
-              </div>
-            </div>
-            <div class="flex-column">
-              <div class="semi-large-border-radius home-column">
-                <img src="/placeholder/images/" class="semi-large-border-radius" width="100%" height="100%">
-              </div>
-              <div class="home-column-box small-border-radius center-all">
-                <h2>Person</h2>
-                <span>Role</span>
-              </div>
-            </div>
-            <div class="flex-column">
-              <div class="semi-large-border-radius home-column">
-                <img src="/placeholder/images/" class="semi-large-border-radius" width="100%" height="100%">
-              </div>
-              <div class="home-column-box small-border-radius center-all">
-                <h2>Person</h2>
-                <span>Role</span>
-              </div>
-            </div>
-             <div class="flex-column" >
-              <div class="semi-large-border-radius home-column" >
-                <img src="/placeholder/images/" class="semi-large-border-radius" width="100%" height="100%">
-              </div>
-              <div class="home-column-box small-border-radius center-all">
-                <h2>Person</h2>
-                <span>Role</span>
-              </div>
-            </div>
-            <div class="flex-column">
-              <div class="semi-large-border-radius home-column">
-                <img src="/placeholder/images/" class="semi-large-border-radius" width="100%" height="100%">
-              </div>
-              <div class="home-column-box small-border-radius center-all">
-                <h2>Person</h2>
-                <span>Role</span>
-              </div>
-            </div> 
-          </div>
-        </div>
-      </section>-->
-      <section class="center-all dark-section">
-        <div class="center-all" style="width: 70%; margin-bottom: 40px;">
-          <div><h1>The Role You Can Be</h1></div>
-          <div class="flex-horizontal flex-wrap role-container">
-            <div class="role-box small-border-radius"> 
-              <div>
-                <img src="images/tools_icon-removebg-preview.png" height="50px"> 
-                <!-- https://www.pinterest.com/pin/692991461416439800/ -->
-                <h2>Builder</h2>
-                <p>The role of a builder is to assemble the builds.</p>
-              </div>
-            </div>
-            <div class="role-box small-border-radius">
-              <div>
-                <img src="images/notebook-removebg-preview.png" height="50px">
-                <!-- https://www.pinterest.com/pin/613967361698934824/ -->
-                <h2>Designer</h2>
-                <p>The role of a designer is to create designs for the builds.</p>
-              </div>
-            </div>
-            <div class="role-box small-border-radius">
-              <div>
-                <img src="images/laptop-removebg-preview.png" height="50px">
-                <!-- https://www.pinterest.com/pin/505951339399149498/ -->
-                <h2>Coder</h2>
-                <p>The role of a coder is to write code for the builds.</p>
-              </div>
-            </div>
-          </div>
+        <div class="choice-b">
+          <h1>Looking to Join?</h1>
+          <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfbUlTictbL5yUoAIgOM0Z20Z40B9yUT6DDIId6Nns3BavJNg/viewform?usp=sf_link" target="_blank">Apply today.</a></p>
         </div>
       </section>
-      <section class="center-all dark-section">
-        <div class="board-container flex-column">
-          <div class="flex-horizontal flex-wrap comp-row">
-            <div class="competition-box small-border-radius">
-              <div class="competition-image-logo"><img src="images/FTC-Alt.png" height="70px"></div>
-              <div class="competition-info-box ">
-                <h3>Director's Note: Shouldn't be too hard</h3> 
-                <p>Build, Design and Program robot and compete against other teams in alliance based format</p>
-              </div>
-            </div>
-            <div class="competition-box  small-border-radius">
-              <div class="competition-image-logo"><img src="images/FRC-Alt.png" height="70px"></div>
-              <div class="competition-info-box">
-                <h3>Director's Note: Very Hard</h3> 
-                <p>Same as FTC but the competition is stronger, time period between events is shorter, and less teams.</p>
-              </div>
-            </div>
-          </div>
-          <div class="text">
-            <div class="board-title flex-column">
-              <h1 style="font-size: xx-large;"> Robotics Competitions</h1>
-              <h2>The Challenge Ahead</h2>
-            </div>
-            <div >
-              <p>The current competitions shown are the competitions robotics participates in.</p>
-            </div>
-          </div>
-          <div class="flex-horizontal flex-wrap comp-row">
-            <div class="competition-box small-border-radius">
-              <div class="competition-image-logo"><img src="images/SeaGlide.png" height="70px"></div>
-              <div class="competition-info-box">
-                <h3>Director's Note: Hard</h3>
-                <p>Using the SeaGlide kit, teams must assemble the underwater drone, design external parts to the drone, and code it.</p>
-              </div>
-            </div>
-            <div class="competition-box small-border-radius">
-              <div class="competition-image-logo"><img src="images/SeaPerch.png" height="70px"></div>
-              <div class="competition-info-box">
-                <h3>Director's Note: Who even knows?</h3>
-                <p>Northeast Robotics hasn't competed in this competition yet. (Person was too lazy to research the competition.)</p>
-              </div>
-            </div>
-          </div>
-            
-          
+      <!-- About Us -->
+      <section id="brief-about">
+        <div class="about-text">
+          <h1>About the Vikings</h1>
+          <p>Viking Robotics is associated with the Space Research Center (SPARC) at Northeast High School. The SPARC program hosts a number of after-school, STEM-oriented, student-led clubs. <br> </br> Formerly known as the N.E.R.D.S. (Northeast Robotics Development Specialists), the club was revitalized by Mr. Cione after the COVID-19 pandemic. <br> </br> The Vikings have grown over the years, recently being named one of the most promising rookie teams in the First Mid-Atlantic (FMA) district. <br> </br> The Vikings have competed in the First Tech Challenge (FTC), the First Robotics Competition (FRC), and the SeaGlide Challenge.</p>
+        </div>
+        <div class="sponsors">
+          <h1>Thank you to our generous sponsors!</h1>
+          <img class="dodlogo" src="images/Full_Color_DoDSTEM_Logo.png" alt="Department of Defense STEM Logo">
+          <img class="johnsonjlogo" src="images/johnson_johnson_logo.png" alt="Johnson & Johnson Logo">
+          <img class="sparclogo" src="images/sparcboosterslogo.png" alt="SPARC Boosters Logo">
         </div>
       </section>
-      <!-- <section class="center-all dark-section">
-        <div style="width: 90%; max-width: 1500px;">
-          <div class="center-all" style="margin-bottom: 60px;">
-            <h1 style="font-size: xx-large;">Showcase Of Our Works</h1>
+      <section class="stat-gallery">
+        <div class="stat-gallery-container">
+          <div class="stat-one">
+            <h1>1</h1>
+            <p>Mentors</p>
           </div>
-          <div class="flex-horizontal flex-wrap" style="display: flex; justify-content: space-around;">
-            <div>
-              <div class="medium-border-radius spline-container">
-                <div class="spline-image FTCYear23-24">
-                  <img src="/placeholder/images/2023-2024-FTC-Robot.png" width="100%" height="100%">
-                </div>
-                <div class="spline-obj FTCYear23-24" style="display: none;">
-                  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.6/build/spline-viewer.js"></script>
-                  <spline-viewer loading-anim-type="spinner-big-light" url="https://prod.spline.design/cyRb28KbVlE6Y-kV/scene.splinecode" class="spline-obj"></spline-viewer>
-                </div>
-              </div>
-              <div class="spline-description ">
-                <h2>2023 - 2024 FTC Robot</h2>
-                <span>Model of our robot built that competed in First Tech Challenge.</span>
-              </div>
-              <div>
-                <button onclick="changeSplineQuality('2d', 'FTCYear23-24')" class="spline-buttons">2D Model</button>
-                <button onclick="changeSplineQuality('3d', 'FTCYear23-24')" class="spline-buttons">3D Model</button>
-              </div>
-            </div>
-            <div>
-              <div class="medium-border-radius spline-container">
-                <div class="spline-image SeaGlideYear23-24">
-                  <img src="/placeholder/images/2023-2024-SeaGlide-Drone.png" width="100%" height="100%">
-                </div>
-                <div class="spline-obj SeaGlideYear23-24" style="display: none;">
-                  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.6/build/spline-viewer.js"></script>
-                  <spline-viewer loading-anim-type="spinner-big-light" url="https://prod.spline.design/9gTrSqNmXG8fab9J/scene.splinecode" class="spline-obj"></spline-viewer>
-                </div>
-              </div>
-              <div class="spline-description">
-                <h2>2023 - 2024 SeaGlide Drone</h2>
-                <span>Model of our underwater drone that competed in SeaGlide.</span>
-              </div>
-              <div >
-                <button onclick="changeSplineQuality('2d', 'SeaGlideYear23-24')" class="spline-buttons">2D Model</button>
-                <button onclick="changeSplineQuality('3d', 'SeaGlideYear23-24')" class="spline-buttons">3D Model</button>
-              </div>
-            </div>
+          <div class="stat-two">
+            <h1>2</h1>
+            <p>Members</p>
           </div>
+          <div class="stat-three">
+            <h1>3</h1>
+            <p>Sponsors</p>
+          </div>
+          <div class="stat-four">
+            <h1>4</h1>
+            <p>Awards</p>
+          </div> 
         </div>
-      </section> -->
-      <section class="center-all dark-section">
-        <div class="text-image-vertical center-all">
-          <div class="text">
-            <h1>Showcase Of Our Works</h1>
-            <p>These builds come from the 2023 - 2024 season in which robotics competed in two competitions.</p>
+      </section>
+      <section id="design-gallery">
+        <div class="design-gallery-container">
+          <h1>Our Designs</h1>
+          <div class="gallery-wrapper">
+            <button id="prev-slide" class="slide-button material-symbols-rounded">chevron_left</button>
+            <div class="image-list">
+              <img src="images/2023-2024-FTC-Robot.png" alt="FTC 2023-24 Season Robot" class="image-item">
+              <img src="images/2023-2024-SeaGlide-Drone.png" alt="SeaGlide 2023-24 Season Glider" class="image-item">
+              <img src="images/09.jpg" alt="FRC 2024-25 Season Robot" class="image-item">
+            </div>
+            <button id="next-slide" class="slide-button material-symbols-rounded">chevron_right</button>
           </div>
-          <div class="image">
-            <div style="display: flex; justify-content: center; width: 100px; gap: 0.75rem">
-              <button onclick="iterateSplineObj(1)"  class="medium-border-radius spline-switch-buttons">←</button>
-              <button onclick="iterateSplineObj(-1)" class="medium-border-radius spline-switch-buttons">→</button>
+          <div class="x-scrollbar">
+            <div class="scroll-track">
+                <div class="scroll-thumb"></div>
             </div>
-            <!-- <img src="images/Drone hovering over water.jpg" width="100%" height="100%" class="medium-border-radius"> -->
-            <div class="spline-display">
-              <div class="medium-border-radius spline-container">
-                <div class="spline-image SeaGlideYear23-24">
-                  <img src="images/2023-2024-SeaGlide-Drone.png" width="100%" height="100%">
-                </div>
-                <div class="spline-obj SeaGlideYear23-24" style="display: none;">
-                  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.6/build/spline-viewer.js"></script>
-                  <spline-viewer loading-anim-type="spinner-big-light" url="https://prod.spline.design/9gTrSqNmXG8fab9J/scene.splinecode" class="spline-obj"></spline-viewer>
-                </div>
-              </div>
-              <div class="spline-description">
-                <h2>2023 - 2024 SeaGlide Drone</h2>
-                <span>Model of our underwater drone that competed in SeaGlide. (Disclaimer: No internal components shown)</span>
-              </div>
-              <div class="spline-button-container">
-                <button onclick="changeSplineQuality('2d', 'SeaGlideYear23-24')" class="spline-buttons">2D Model</button>
-                <button onclick="changeSplineQuality('3d', 'SeaGlideYear23-24')" class="spline-buttons">3D Model</button>
-              </div>
-            </div>
-            <div class="spline-display" style="display: none;">
-              <div class="medium-border-radius spline-container">
-                <div class="spline-image FTCYear23-24">
-                  <img src="images/2023-2024-FTC-Robot.png" width="100%" height="100%">
-                </div>
-                <div class="spline-obj FTCYear23-24" style="display: none;">
-                  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.6/build/spline-viewer.js"></script>
-                  <spline-viewer loading-anim-type="spinner-big-light" url="https://prod.spline.design/cyRb28KbVlE6Y-kV/scene.splinecode" class="spline-obj"></spline-viewer>
-                </div>
-              </div>
-              <div class="spline-description ">
-                <h2>2023 - 2024 FTC Robot</h2>
-                <span>Model of our robot built that competed in First Tech Challenge.</span>
-              </div>
-              <div class="spline-button-container">
-                <button onclick="changeSplineQuality('2d', 'FTCYear23-24')" class="spline-buttons">2D Model</button>
-                <button onclick="changeSplineQuality('3d', 'FTCYear23-24')" class="spline-buttons">3D Model</button>
-              </div>
-            </div>
+          </div>
+          <div class="right-align-text">
+            <a href="/gallery.html">see more ></a>
           </div>
         </div>
       </section>
     </main>
-    <footer class="footer-section"></footer>
+    <footer class="footer-section">
+      <div class="footer-wrapper">
+        <div class="footer-connect">
+          <h1>CONNECT WITH US</h1>
+          <div class="socials-icons">
+            <a href="https://www.instagram.com/nehs.robotics/"><img src="images/Instagram_Glyph_White.png" alt="The Instagram logo." class="instagram"></a>
+            <a href="https://www.tiktok.com/@nehs.vikings.10143?_t=ZT-8xTuCBoBU5X&_r=1"><img src="images/tiktok.png" alt="The TikTok logo." class="tiktok"></a>
+          </div>
+        </div>
+        <div class="footer-find-more">
+          <ul class="head">
+            <li><span>FIND MORE</span></li>
+          </ul>
+          <ul class="first-col-second-row">
+            <li><a href="/about.html">About</a></li>
+          </ul>
+          <ul class="first-col-third-row">
+            <li><a href="/news.html">News</a></li>
+          </ul>
+          <ul class="second-col-second-row">
+            <li><a href="/resources.html">Resources</a></li>
+          </ul>
+          <ul class="second-col-third-row">
+            <li><a href="/store.html">Store</a></li>
+          </ul>
+          <ul class="third-col-second-row">
+            <li><a href="/gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="The Viking Robotics logo.">
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
