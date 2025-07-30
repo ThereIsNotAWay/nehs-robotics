@@ -165,7 +165,7 @@ nav {
 
 /* Footer Elements */
 .footer-section {
-  background: #575757;
+  background: #691f20;
   min-width: 375px;
   min-height: 170px;
 }
@@ -327,8 +327,8 @@ nav {
   display: flex;
   position: absolute;
   flex-direction: column;
-  left: 5vw;
-  top: 35vh;
+  left: 6vw;
+  top: 40vh;
   max-width: 50vw;
   max-height: 25vh;
 }
@@ -353,7 +353,7 @@ nav {
   padding-top: 0.5rem;
 }
 
-.current-highlight {
+/*.current-highlight {
   display: flex;
   position: absolute;
   background: #F4EDEC;
@@ -389,16 +389,17 @@ nav {
   left: 1.1rem;
   padding-right: 1.1rem;
   padding-bottom: 0.5rem;
-}
+}*/
 
 #redirect-containers {
-  display: inline-grid;
+  display: flex;
   position: absolute;
+  top: 89%;
   background: #691f20;
   z-index: 300;
   width: 100%;
-  height: calc(10vh + 0.001rem);
-  top: 90%;
+  height: 11.333vh;
+  justify-content: center;
 }
 
 #redirect-containers a:link {
@@ -410,11 +411,11 @@ nav {
 }
 
 .choice-a {
-  width: 50vw;
-  border-right: 0.001rem solid;
-  border-color: rgb(206, 206, 206);
-  padding-left: 2.5%;
-  padding-top: 2.3vh;
+  width: 45%;
+  border-right: 0.0001rem solid;
+  border-color: #f4edec;
+  padding-top: 2.5vh;
+  padding-left: 0.8vw;
 }
 
 .choice-a h1 {
@@ -433,11 +434,10 @@ nav {
 }
 
 .choice-b {
-  position: absolute;
-  right: 0;
+  width: 45%;
   text-align: right;
-  padding-right: 2.5%;
-  padding-top: 2.3vh;
+  padding-right: 0.8vw;
+  padding-top: 2.5vh;
 }
 
 .choice-b h1 {
@@ -543,7 +543,7 @@ nav {
   height: 17.5em;
   width: 100%;
   margin: auto;
-  background: #807b7b;
+  background: #25291c;
   justify-content: center;
   padding: 2em;
   gap: 20px;
@@ -556,6 +556,7 @@ nav {
   width: 23.62em;
   height: 13.5em;
   text-align: center;
+  filter: drop-shadow(0 0 0.5rem black);
 }
 
 .stat-two {
@@ -565,6 +566,7 @@ nav {
   width: 23.62em;
   height: 13.5em;
   text-align: center;
+  filter: drop-shadow(0 0 0.5rem black);
 }
 
 .stat-three {
@@ -574,6 +576,7 @@ nav {
   width: 23.62em;
   height: 13.5em;
   text-align: center;
+  filter: drop-shadow(0 0 0.5rem black);
 }
 
 .stat-four {
@@ -583,6 +586,7 @@ nav {
   width: 23.62em;
   height: 13.5em;
   text-align: center;
+  filter: drop-shadow(0 0 0.5rem black);
 }
 
 .stat-gallery h1 {
@@ -604,7 +608,7 @@ nav {
 #design-gallery {
   display: flex;
   margin: auto;
-  background-color: rgb(206, 206, 206);
+  background-color: #F4EDEC;
 }
 
 .design-gallery-container {
@@ -621,6 +625,22 @@ nav {
   font-size: clamp(1.5rem, calc(2vw + 0.5rem), 3rem);
 }
 
+.spline-buttons {
+  background-color: #25291C;
+  border: none;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+}
+
+.spline-buttons:hover {
+  background-color: #383e2b;
+}
+
+.spline-buttons:active {
+  transform: translateY(1px);
+}
+
 .design-gallery-container a {
   color: black;
   font-weight: 300;
@@ -633,9 +653,10 @@ nav {
 
 .gallery-wrapper {
   position: relative;
+  padding: 2em;
 }
 
-.gallery-wrapper .slide-button {
+/*.gallery-wrapper .slide-button {
   position: absolute;
   top: 50%;
   height: 50px;
@@ -661,7 +682,7 @@ nav {
 
 .gallery-wrapper .slide-button#next-slide {
   right: 0;
-}
+}*/
 
 .gallery-wrapper {
   display: flex;
@@ -672,14 +693,24 @@ nav {
 
 .gallery-wrapper .image-list {
   display: grid;
-  gap: 15px;
-  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  grid-template-columns: repeat(2, 1fr);
   font-size: 0;
-  overflow-x: auto;
-  scrollbar-width: none;
+  /*overflow-x: auto;
+  scrollbar-width: none;*/
 }
 
-.gallery-wrapper .image-list::-webkit-scrollbar {
+.image-list img {
+  filter: drop-shadow(10px 5px 5px gray);
+}
+
+.spline-obj {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(10px 5px 5px gray);
+}
+
+/*.gallery-wrapper .image-list::-webkit-scrollbar {
   display: none;
 }
 
@@ -694,7 +725,7 @@ nav {
   align-items: center;
   height: 24px;
   width: 100%;
-  background: rgb(206, 206, 206);
+  background: #F4EDEC;
 }
 
 .x-scrollbar .scroll-track {
@@ -731,7 +762,7 @@ nav {
   right: 0;
   top: -10px;
   bottom: -10px;
-}
+}*/
 
 @media (max-width: 1023px) {
 
