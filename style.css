@@ -5,10 +5,6 @@
 	font-family: "inter";
 }
 
-@media (max-width: 600px) {
-
-}
-
 /* Font code provided by Google Fonts */
 .inter-bold {
   font-family: "Inter", sans-serif;
@@ -424,6 +420,19 @@ nav {
   padding-top: 0.5rem;
 }
 
+@media (max-width: 1200px) {
+
+    .landing h1 {
+      font-size: clamp(2vw, calc(10vw + 0.5rem), 4vw);
+    }
+
+    .landing p {
+      font-size: clamp(1.5vw, calc(10vw + 0.5rem), 2vw);
+      padding-top: 2px;
+    }
+
+}
+
 /*.current-highlight {
   display: flex;
   position: absolute;
@@ -525,6 +534,26 @@ nav {
   font-weight: 300;
   font-size: clamp(0.5rem, calc(1vw + 0.1rem), 1rem);
   color: rgb(56, 49, 49);
+}
+
+@media (max-width: 1200px) {
+
+    .choice-a h1 {
+      font-size: clamp(1.5vw, -0.875rem + 1vw, 3vw);
+    }
+
+    .choice-a p {
+      font-size: clamp(1.3vw, -0.875rem + 1vw, 2vw);
+    }
+
+    .choice-b h1 {
+      font-size: clamp(1.5vw, -0.875rem + 1vw, 3vw);
+    }
+
+    .choice-b p {
+      font-size: clamp(1.3vw, -0.875rem + 1vw, 2vw);
+    }
+
 }
 
 #brief-about {
