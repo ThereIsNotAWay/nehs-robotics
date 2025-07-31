@@ -67,12 +67,12 @@ function changeQuality (quality) {
   if (quality == "2d") {
     for (i = 0; i < images.length; i++) {
       splines[i].style.display = "none";
-      images[i].style.display = "flex";
+      images[i].style.display = "grid";
     }
   } else if (quality == "3d") {
     for (i = 0; i < splines.length; i++) {
       images[i].style.display = "none";
-      splines[i].style.display = "flex";
+      splines[i].style.display = "inherit";
     }
   }
 

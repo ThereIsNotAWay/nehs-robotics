@@ -634,7 +634,7 @@ nav {
   background-color: #25291C;
   border: none;
   color: white;
-  padding: 15px 15px;
+  padding: 1.2em 1.2em;
   text-align: center;
 }
 
@@ -698,20 +698,22 @@ nav {
 
 .gallery-wrapper .image-list {
   display: grid;
-  gap: 30px;
-  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  grid-template-columns: repeat(3, 1fr);
   font-size: 0;
   /*overflow-x: auto;
   scrollbar-width: none;*/
 }
 
 .image-list img {
+  width: 100%;
+  height: auto;
   filter: drop-shadow(10px 5px 5px gray);
 }
 
 .spline-obj {
   width: 100%;
-  min-height: 200%;
+  height: 400px;
   filter: drop-shadow(10px 5px 5px gray);
   gap: 1em;
 }
