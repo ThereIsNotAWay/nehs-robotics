@@ -5,6 +5,13 @@
 	font-family: "inter";
 }
 
+@media only screen and (max-width: 600px) {
+  spline-viewer #container > canvas{
+    width: 100%!important;
+    height: auto!important;
+  }
+}
+
 /* Font code provided by Google Fonts */
 .inter-bold {
   font-family: "Inter", sans-serif;
