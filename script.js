@@ -94,7 +94,7 @@ function changeQuality (quality) {
   } else if (quality == "3d") {
     for (i = 0; i < splines.length; i++) {
       images[i].style.display = "none";
-      splines[i].style.display = "inherit";
+      splines[i].style.display = "flex";
     }
   }
 

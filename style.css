@@ -6,7 +6,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-  spline-viewer #container > canvas{
+  spline-viewer #container > canvas {
     width: 100%!important;
     height: auto!important;
   }
@@ -84,7 +84,7 @@ nav {
   padding: 1.6em;
 }
 
-.viking_logo {
+.viking-logo {
   max-width: 80px;
   max-height: 80px;
 }
@@ -102,7 +102,7 @@ nav {
 .logo-text {
   display: flex;
   margin: auto;
-  padding: 0.8vw;
+  padding: 0.4em;
 }
 
 #open-sidebar {
@@ -149,7 +149,7 @@ nav {
     height: 100vh;
     width: min(20em, 100%);
     z-index: 500;
-    border-left: 0.8rem solid #691f20;
+    border-left: 1px solid #691f20;
     align-items: flex-start;
     background-color: #F4EDEC;
     transition: right 300ms ease-out;
@@ -412,7 +412,7 @@ nav {
   object-fit: cover;
   opacity: 0;
   transition: opacity 2s ease-in-out;
-  mask-image: linear-gradient(to right, transparent -50%, 50%, black);
+  mask-image: linear-gradient(to right, transparent -50%, 70%, black);
 }
 
 .showing {
@@ -432,7 +432,7 @@ nav {
 .landing h1 {
   z-index: 200;
   font-weight: 700;
-  font-size: clamp(1.3rem, calc(10vw + 0.5rem), 2.813rem);
+  font-size: clamp(1.3rem, calc(8vw + 0.5rem), 2.813rem);
   text-decoration: none;
   color: #9E4243;
   white-space: wrap;
@@ -442,24 +442,11 @@ nav {
 .landing p {
   z-index: 200;
   font-weight: 300;
-  font-size: clamp(1.3rem, calc(10vw + 0.5rem), 1.25rem);;
+  font-size: clamp(0.8rem, calc(1.5vw + 0.5rem), 1.3rem);;
   text-decoration: none;
   color: rgb(206, 206, 206);
   white-space: nowrap;
   padding-top: 0.5rem;
-}
-
-@media (max-width: 1200px) {
-
-    .landing h1 {
-      font-size: clamp(2vw, calc(10vw + 0.5rem), 4vw);
-    }
-
-    .landing p {
-      font-size: clamp(1.5vw, calc(10vw + 0.5rem), 2vw);
-      padding-top: 2px;
-    }
-
 }
 
 /*.current-highlight {
@@ -520,8 +507,7 @@ nav {
 
 .choice-a {
   width: 50%;
-  border-right: 0.0001rem solid;
-  border-color: #f4edec;
+  border-right: 0.0001rem solid #f4edec;
   padding-top: 2.5vh;
   padding-bottom: 3vh;
   padding-left: 3vw;
@@ -530,7 +516,7 @@ nav {
 .choice-a h1 {
   z-index: 200;
   font-weight: 700;
-  font-size: clamp(1rem, calc(1.4vw + 0.1rem), 1.5rem);
+  font-size: clamp(1rem, calc(1.8vw + 0.1rem), 1.5rem);
   color: #F4EDEC;
   white-space: nowrap;
 }
@@ -553,7 +539,7 @@ nav {
 .choice-b h1 {
   z-index: 200;
   font-weight: 700;
-  font-size: clamp(1rem, calc(1.4vw + 0.1rem), 1.5rem);
+  font-size: clamp(1rem, calc(1.8vw + 0.1rem), 1.5rem);
   color: #F4EDEC;
   white-space: nowrap;
 }
@@ -565,23 +551,44 @@ nav {
   color: rgb(56, 49, 49);
 }
 
-@media (max-width: 1200px) {
+@media screen and (max-width: 900px) {
 
-    .choice-a h1 {
-      font-size: clamp(1.5vw, -0.875rem + 1vw, 3vw);
-    }
+  #redirect-containers {
+    position: unset;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
 
-    .choice-a p {
-      font-size: clamp(1.3vw, -0.875rem + 1vw, 2vw);
-    }
+  .choice-a {
+    padding: 1em;
+    width: 100%;
+    border-right: unset;
+    border-bottom: 0.05rem solid #F4EDEC;
+  }
 
-    .choice-b h1 {
-      font-size: clamp(1.5vw, -0.875rem + 1vw, 3vw);
-    }
+  .choice-a h1 {
+    font-size: 20px;
+  }
 
-    .choice-b p {
-      font-size: clamp(1.3vw, -0.875rem + 1vw, 2vw);
-    }
+  .choice-a p {
+    font-size: 16px;
+  }
+  
+  .choice-b {
+    padding: 1em;
+    width: 100%;
+    text-align: center;
+  }
+
+  .choice-b h1 {
+    font-size: 20px;
+  }
+
+  .choice-b p {
+    font-size: 16px;
+  }
 
 }
 
@@ -635,6 +642,36 @@ nav {
   width: 75%;
   height: auto;
   filter: drop-shadow(10px 5px 5px gray);
+}
+
+@media screen and (max-width: 900px) {
+
+  #brief-about {
+    flex-direction: column;
+    padding: 1em;
+  }
+
+  .about-text-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+  }
+
+  .about-text h1 {
+    font-size: 32px;
+  }
+
+  .about-text p {
+    font-size: 16px;
+  }
+
+  .about-img img {
+    width: 150%;
+    padding: 0.4em 0;
+    height: 100%;
+  }
+
 }
 
 #sponsors {
@@ -868,13 +905,15 @@ nav {
   justify-content: center;
   margin: auto;
   flex-direction: column;
+  width: 100%;
 }
 
 .gallery-wrapper .image-list {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 50%;
   gap: 1em;
-  grid-template-columns: repeat(3, 1fr);
-  font-size: 0;
   /*overflow-x: auto;
   scrollbar-width: none;*/
 }
@@ -886,6 +925,7 @@ nav {
 }
 
 .spline-obj {
+  padding: 1em;
   width: 100%;
   height: 300px;
   filter: drop-shadow(10px 5px 5px gray);
@@ -902,7 +942,12 @@ nav {
   }
 
   .spline-obj {
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
   }
 
 }
