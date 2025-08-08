@@ -8,7 +8,7 @@
   {% set primary_news_article = news_articles[0] %}
   <div class="text-image spread-space flex-horizontal flex-wrap">
     <div class="smaller_image">
-      <img class="smaller_image small-border-radius" src="{{ url_for('static', filename='images/' + primary_news_article['image_url']) }}" width="100%" height="100%">
+      <img class="smaller_image small-border-radius" src="{{ url_for('gallery.static', filename='images/' + primary_news_article['image_url']) }}" width="100%" height="100%">
     </div>
     <div class="text">
       <div>
@@ -24,7 +24,7 @@
       {% if news_articles|length > index and not news_articles[index]|is_first(news_articles) %}
         <div class="news-feature">
           <div class="news-feature-image">
-            <img class="small-border-radius" src="{{ url_for('static', filename='images/' + news_articles[index]['image_url']) }}" width="100%" height="100%">
+            <img class="small-border-radius" src="{{ url_for('gallery.static', filename='images/' + news_articles[index]['image_url']) }}" width="100%" height="100%">
           </div>
           <div class="news-feature-heading">
             <h2>{{ news_articles[index] }}</h2>

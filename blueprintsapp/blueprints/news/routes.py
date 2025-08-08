@@ -4,7 +4,7 @@ from sqlalchemy import desc
 from blueprintsapp.app import db
 from blueprintsapp.blueprints.news.models import NewsArticle
 
-news = Blueprint('news', __name__, template_folder='templates')
+news = Blueprint('news', __name__, template_folder='templates', static_folder='static', static_url_path='news/static')
 
 @news.route('/')
 def display_news_articles():
