@@ -45,17 +45,39 @@ function changeBackground() {
 
 setInterval(changeBackground, 4000);
 
-const menuButton = document.querySelector('.menu-button');
+const navbar = document.getElementById('navbar');
+const openButton = document.getElementById('open-sidebar');
+const media = window.matchMedia("(width < 700px)");
 
-function showMenu() {
+media.addEventListener('change', (e) => updateNavbar(e))
 
-  const menuItems = document.querySelector('.navlinks');
-  const transformHeader = document.querySelector('header');
+function updateNavbar(e) {
 
-  menuItems.classList.toggle('active');
-  transformHeader.classList.toggle('active');
+  const isMobile = e.matches;
+  console.log(isMobile);
+
+  if (isMobile) {
+    navbar.setAttribute('inert', '');
+  }
+  else {
+    navbar.removeAttribute('inert');
+  }
 
 }
+
+function openSidebar() {
+  navbar.classList.add('show');
+  openButton.setAttribute('aria-expanded', 'true');
+  navbar.removeAttribute('inert');
+}
+
+function closeSidebar() {
+  navbar.classList.remove('show');
+  openButton.setAttribute('aria-expanded', 'false');
+  navbar.setAttribute('inert', '');
+}
+
+updateNavbar(media);
 
 function changeQuality (quality) {
 

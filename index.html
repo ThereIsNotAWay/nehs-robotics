@@ -23,16 +23,16 @@
     <!-- Website Header -->
     <header>
       <!-- <a href="common_layout/header.html" style="display: flex; align-items: center;"></a> -->
-      <nav>
-        <div class="logo">
-          <a href="/index.html"><img class="file" src="../images/resizedlogo.png"><span class="logo-text">VIKING ROBOTICS</span></a>
-        </div>
-        <a onclick="showMenu()" href="#" class="menu-button">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </a>
+      <div class="logo">
+          <a href="/index.html"><img class="viking_logo" src="../images/logo.png"><span class="logo-text">VIKING ROBOTICS</span></a>
+      </div>
+      <nav id="navbar">
         <ul class="navlinks">
+          <li>
+            <button id="close-sidebar" onclick="closeSidebar()" aria-label="close sidebar">
+              <img class="x-button" src="images/close_menu_icon.svg" alt="" width="64" height="52">
+            </button>
+          </li>
           <li><a href="/about.html">ABOUT</a></li>
           <li><a href="/resources.html">RESOURCES</a></li>
           <li><a href="/gallery.html">GALLERY</a></li>
@@ -40,6 +40,10 @@
           <li><a href="/store.html">STORE</a></li>
         </ul>
       </nav>
+      <button id="open-sidebar" onclick="openSidebar()" aria-label="open sidebar" aria-expanded="false" aria-controls="navbar">
+        <img src="images/sidebar_menu_icon.svg" alt="" width="64" height="52">
+      </button>
+      <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
     </header>
     <main class="main">
       <!-- Landing Image -->
@@ -128,8 +132,10 @@
       <section id="design-gallery">
         <div class="design-gallery-container">
           <h1>Our Designs</h1>
-          <button onclick="changeQuality('2d')" class="spline-buttons">2D Models</button>
-          <button onclick="changeQuality('3d')" class="spline-buttons">3D Models</button>
+          <div class="spline-buttons-container">
+            <button onclick="changeQuality('2d')" class="spline-buttons">2D Models</button>
+            <button onclick="changeQuality('3d')" class="spline-buttons">3D Models</button>
+          </div>
           <div class="gallery-wrapper">
             <!-- <button id="prev-slide" class="slide-button material-symbols-rounded">chevron_left</button> -->
             <div class="image-list">

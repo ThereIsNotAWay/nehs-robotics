@@ -47,25 +47,19 @@ header {
 nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   text-align: center;
+  margin-left: auto;
 }
 
 .navlinks {
   display: flex;
-  white-space: nowrap;
   align-items: center;
-  height: clamp(3.33333rem, calc(3vh + 7rem), 7rem);
-  width: inherit;
-  position: absolute;
-  right: 0;
 }
 
 .navlinks li {
   display: flex;
   list-style: none;
   width: 100%;
-  height: clamp(3.33333rem, calc(3vh + 7rem), 7rem);
   padding: 2.4em;
 }
 
@@ -79,28 +73,26 @@ nav {
 
 .navlinks li:hover {
   background-color: #E4CECE;
-  transition: .2s;
+  transition: 150ms ease;
   border-bottom: 0.5rem solid #691f20;
 }
 
 .logo {
   display: flex;
-  padding-top: min(0.5em, 0.75%);
-  padding-left: 1.2em;
-  white-space: nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1.6em;
 }
 
-.logo img {
-  display: flex;
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: auto;
-  max-width: 100%;
-  height: auto;
+.viking_logo {
+  max-width: 80px;
+  max-height: 80px;
 }
 
 .logo a {
   display: flex;
+  text-wrap: nowrap;
+  align-items: center;
   font-weight: 700;
   font-size: clamp(1.3rem, calc(10vw + 0.5rem), 1.9rem);
   text-decoration: none;
@@ -108,60 +100,90 @@ nav {
 }
 
 .logo-text {
-  padding-top: 0.8em;
-  padding-left: 0.3em;
+  display: flex;
+  margin: auto;
+  padding: 0.8vw;
 }
 
-.menu-button {
+#open-sidebar {
   display: none;
-  position: absolute;
-  top: 42px;
-  right: 35px;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 35px;
-  height: 25px;
+  background: none;
+  border: none;
+  padding: 2em;
+  margin-left: auto;
+  cursor: pointer;
+  filter: brightness(0%);
 }
 
-.menu-button .bar {
-  height: 3px;
-  width: 100%;
-  background-color: rgb(0, 0, 0);
-  border-radius: 10px;
+#close-sidebar {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  filter: brightness(0%);
+  list-style: none;
+  align-items: center;
+  margin-left: -8%;
+  margin-top: -11%;
+  height: 1rem;
 }
 
-@media (max-width: 1267px) {
+#overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  display: none;
+}
 
-    header.active {
-      height: 100dvh;
-    }
+@media screen and (max-width: 1400px) {
 
-    .logo {
-      position: absolute;
-      top: 8.5px;
-    }
+  #open-sidebar, #close-sidebar {
+    display: block;
+  }
 
-    .menu-button {
-      display: flex;
-    }
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: min(20em, 100%);
+    z-index: 500;
+    border-left: 0.8rem solid #691f20;
+    align-items: flex-start;
+    background-color: #F4EDEC;
+    transition: right 300ms ease-out;
+  }
 
-    .navlinks {
-      display: none;
-      position: absolute;
-      top: 111px;
-      width: 100%;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    
-    .navlinks li {
-      width: 100%;
-      flex-direction: column;
-    }
+  nav.show {
+    right: 0;
+  }
 
-    .navlinks.active {
-      display: flex;
-    }
+  nav.show ~ #overlay {
+    display: block;
+  }
+
+  .navlinks {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .navlinks li:hover {
+    border-bottom: none;
+  }
+
+  .navlinks li {
+    width: 100%;
+    padding-left: 2em;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+
+  .logo-text {
+    display: none;
+  }
 
 }
 
@@ -584,7 +606,7 @@ nav {
 
 .about-text h1 {
   z-index: 200;
-  font-weight: 300;
+  font-weight: 400;
   font-size: clamp(0.5rem, calc(3vw + 0.1rem), 3.3rem);
   text-decoration: none;
   color: black;
@@ -626,7 +648,7 @@ nav {
 .sponsor-gallery-container {
   display: flex;
   margin: auto;
-  width: 90%;
+  width: 100%;
   justify-content: center;
   align-items: center;
 }
@@ -636,7 +658,7 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 7em;
+  gap: 10vw;
 }
 
 .sponsor-logos img {
@@ -760,14 +782,30 @@ nav {
   max-width: 1200px;
   width: 95%;
   margin: auto;
-  padding-top: 2em;
-  padding-bottom: 5em;
+  padding-top: 3.5vh;
+  padding-bottom: 5vh;
 }
 
 .design-gallery-container h1 {
-  padding: 1em 0;
+  padding: 2.5vh 0;
   font-weight: 300;
   font-size: clamp(1.5rem, calc(2vw + 0.5rem), 3rem);
+}
+
+@media (max-width: 600px) {
+
+  .design-gallery-container h1 {
+    text-align: center;
+  }
+
+  .spline-buttons-container {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+  }
+
 }
 
 .spline-buttons {
@@ -794,11 +832,6 @@ nav {
 
 .design-gallery-container a:visited {
   color: black;
-}
-
-.gallery-wrapper {
-  position: relative;
-  padding: 2em;
 }
 
 /*.gallery-wrapper .slide-button {
@@ -834,6 +867,7 @@ nav {
   align-items: center;
   justify-content: center;
   margin: auto;
+  flex-direction: column;
 }
 
 .gallery-wrapper .image-list {
@@ -856,6 +890,21 @@ nav {
   height: 300px;
   filter: drop-shadow(10px 5px 5px gray);
   gap: 1em;
+}
+
+@media (max-width: 600px) {
+
+  .gallery-wrapper .image-list {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: auto;
+  }
+
+  .spline-obj {
+    
+  }
+
 }
 
 /*.gallery-wrapper .image-list::-webkit-scrollbar {
