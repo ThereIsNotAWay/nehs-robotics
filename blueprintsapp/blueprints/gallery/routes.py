@@ -4,7 +4,7 @@ from PIL import Image
 from blueprintsapp.app import db
 from blueprintsapp.blueprints.gallery.models import SeasonImages, SeasonDescriptions
 
-gallery = Blueprint('gallery', __name__, template_folder='templates')
+gallery = Blueprint('gallery', __name__, template_folder='templates', static_folder='static', static_url_path='gallery/static')
 
 @gallery.route('/')
 def season_gallery():
@@ -24,7 +24,7 @@ def team_season(season):
 @gallery.app_template_filter('image_size_check')
 def is_taller(image_url):
   try:
-    complete_image_url = "blueprintsapp/static/images/" + image_url
+    complete_image_url = "blueprintsapp/blueprints/gallery/static/images/" + image_url
     actual_image = Image.open(complete_image_url)
     width, height = actual_image.size
     actual_image.close()
