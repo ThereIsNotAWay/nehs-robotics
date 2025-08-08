@@ -12,7 +12,7 @@
     <div class="photo-gallery flex-horizontal flex-wrap">
     {% for image in images %}
       <div class="photo-gallery-img {{ image.image_url|image_size_check }}">
-        <img src="{{ url_for('static', filename='images/' + image.image_url ) }}" width="100%" height="100%">
+        <img src="{{ url_for('gallery.static', filename='images/' + image.image_url ) }}" width="100%" height="100%">
         {% if image.image_caption|has_caption %}
           <div class="photo-gallery-img-caption">
             <p>{{ image.image_caption }}</p>
