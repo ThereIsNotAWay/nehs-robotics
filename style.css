@@ -123,9 +123,7 @@ nav {
   filter: brightness(0%);
   list-style: none;
   align-items: center;
-  margin-left: -8%;
-  margin-top: -11%;
-  height: 1rem;
+  padding: 1em;
 }
 
 #overlay {
@@ -139,10 +137,12 @@ nav {
 @media screen and (max-width: 1400px) {
 
   #open-sidebar, #close-sidebar {
-    display: block;
+    display: flex;
   }
 
   nav {
+    display: flex;
+    flex-direction: column;
     position: fixed;
     top: 0;
     right: -100%;
