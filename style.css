@@ -179,7 +179,7 @@ nav {
 
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 570px) {
 
   .logo-text {
     display: none;
