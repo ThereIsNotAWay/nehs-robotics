@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viking Robotics: Gallery</title>
+    <title>Gallery</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="x-icon" href="images/logo.png">
     <script defer src="script.js"></script>
@@ -20,13 +20,62 @@
   <body>
     <!-- Website Header -->
     <header>
-      <a href="common_layout/header.html" style="display: flex; align-items: center;"></a>
+      <div class="logo">
+          <a href="/index.html"><img class="viking-logo" src="../images/logo.png"><span class="logo-text">VIKINGS ROBOTICS</span></a>
+      </div>
+      <nav id="navbar">
+        <button id="close-sidebar" onclick="closeSidebar()" aria-label="close sidebar">
+          <img class="x-button" src="images/close_menu_icon.svg" alt="" width="64" height="52">
+        </button>
+        <ul class="navlinks">
+          <li><a href="/about.html">ABOUT</a></li>
+          <li><a href="/resources.html">RESOURCES</a></li>
+          <li><a href="/gallery.html">GALLERY</a></li>
+          <li><a href="/news.html">NEWS</a></li>
+          <li><a href="/store.html">STORE</a></li>
+        </ul>
+      </nav>
+      <button id="open-sidebar" onclick="openSidebar()" aria-label="open sidebar" aria-expanded="false" aria-controls="navbar">
+        <img src="images/sidebar_menu_icon.svg" alt="" width="64" height="52">
+      </button>
+      <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
     </header>
     <main class="main">
       <section class="wip">
 
       </section>
     </main>
-    <footer class="footer-section"></footer>
+    <footer class="footer-section">
+      <div class="footer-wrapper">
+        <div class="footer-connect">
+          <h1>CONNECT WITH US</h1>
+          <div class="socials-icons">
+            <a href="https://www.instagram.com/nehs.robotics/"><img src="images/Instagram_Glyph_White.png" alt="The Instagram logo." class="instagram"></a>
+            <a href="https://www.tiktok.com/@nehs.vikings.10143?_t=ZT-8xTuCBoBU5X&_r=1"><img src="images/tiktok.png" alt="The TikTok logo." class="tiktok"></a>
+          </div>
+        </div>
+        <div class="footer-find-more">
+          <ul class="head">
+            <li><span>FIND MORE</span></li>
+          </ul>
+          <div class="column-wrapper">
+            <ul class="first-column">
+              <li><a href="/about.html">About</a></li>
+              <li><a href="/news.html">News</a></li>
+            </ul>
+            <ul class="second-column">
+              <li><a href="/resources.html">Resources</a></li>
+              <li><a href="/store.html">Store</a></li>
+            </ul>
+            <ul class="third-column">
+              <li><a href="/gallery.html">Gallery</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-logo">
+          <img src="images/logo.png" alt="The Vikings Robotics logo.">
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
