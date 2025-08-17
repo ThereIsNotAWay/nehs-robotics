@@ -4,7 +4,7 @@
 
 {% block content %}
   <section class="section-top-no-pad center-all dark-section">
-    <img src="{{ url_for('static', filename='images/FTC-Arena.jpg') }}" class="competition-image-background">
+    <img src="{{ url_for('resources.static', filename='images/FTC-Arena.jpg') }}" class="competition-image-background">
     <div class="center-all title-headers" style="position: absolute">
       <h1>Where rising champions ascend</h1>
       <h2>We do not talk about 2023 - 2024</h2>
@@ -31,14 +31,14 @@
         <div>
           <h2>Java Brief Guide</h2>
           <p>The robots built are programmed in Java. <a href="https://docs.google.com/document/d/1z6gnL81MG4uZ0bzlr0-W3wvMusmAU_6HFxoyFDcr09E/edit?pli=1#heading=h.roon9pfe6v5l" target="_blank">Basic Java Guide</a></p>
-          <img src="{{ url_for('static', filename='images/java-logo.png') }}" width="100%">
+          <img src="{{ url_for('resources.static', filename='images/java-logo.png') }}" width="100%">
         </div>
       </div>
       <div class="resource-column semi-large-border-radius">
         <div class="center-all">
           <h2>Tinkercad</h2>
           <p>Tinkercad is an online 3d modeling program for users to design in 3d. <a href="https://www.youtube.com/watch?v=60xfIu-lqAs">Tinkercad Youtube Tutorial</a></p>
-          <a href="https://www.tinkercad.com/" style="width: 100%;"><img src="{{ url_for('static', filename='images/tinkercad-logo.png') }}" class="img-border" width="100%"></a>
+          <a href="https://www.tinkercad.com/" style="width: 100%;"><img src="{{ url_for('resources.static', filename='images/tinkercad-logo.png') }}" class="img-border" width="100%"></a>
         </div>
       </div>
       <div class="resource-column semi-large-border-radius">
@@ -49,31 +49,31 @@
         <div class="center-all">
           <div class="flex-horizontal overflow-x" style="width: 15rem; display: flex; max-width: 300px;">
             <div class="flex-column">
-              <img src="{{ url_for('static', filename='images/driver-hub.png') }}" >
+              <img src="{{ url_for('resources.static', filename='images/driver-hub.png') }}" >
               <a href="https://ftc-docs.firstinspires.org/en/latest/control_hard_compon/ds_components/components/components.html#android-device"><h1>Driver Hub</h1></a>
             </div>
             <div class="flex-column">
-              <img src="{{ url_for('static', filename='images/control-hub.png') }}" >
+              <img src="{{ url_for('resources.static', filename='images/control-hub.png') }}" >
               <a href="https://ftc-docs.firstinspires.org/en/latest/control_hard_compon/rc_components/hub/hub.html#control-hub"><h1>Control Hub</h1></a>
             </div>
             <div class="flex-column">
-              <img src="{{ url_for('static', filename='images/expansion-hub.png') }}" >
+              <img src="{{ url_for('resources.static', filename='images/expansion-hub.png') }}" >
               <a href="https://ftc-docs.firstinspires.org/en/latest/control_hard_compon/rc_components/hub/hub.html#expansion-hub"><h1>Expansion Hub</h1></a>
             </div>
             <div class="flex-column">
-              <img src="{{ url_for('static', filename='images/motor.png') }}" >
+              <img src="{{ url_for('resources.static', filename='images/motor.png') }}" >
               <a href="https://ftc-docs.firstinspires.org/en/latest/control_hard_compon/rc_components/motors/motors.html"><h1>Motor</h1></a>
             </div>
             <div class="flex-column">
-              <img src="{{ url_for('static', filename='images/servo.png') }}" >
+              <img src="{{ url_for('resources.static', filename='images/servo.png') }}" >
               <a href="https://ftc-docs.firstinspires.org/en/latest/control_hard_compon/rc_components/servos/servos.html"><h1>Servo</h1></a>
             </div>
             <div class="flex-column">
-              <img src="{{ url_for('static', filename='images/battery.png') }}" >
+              <img src="{{ url_for('resources.static', filename='images/battery.png') }}" >
               <a href="https://ftc-docs.firstinspires.org/en/latest/control_hard_compon/rc_components/power_distr/power-distr.html#robot-main-battery"><h1>Battery</h1></a>
             </div>
             <div class="flex-column">
-              <img src="{{ url_for('static', filename='images/power-switch.png') }}" >
+              <img src="{{ url_for('resources.static', filename='images/power-switch.png') }}" >
               <a href="https://ftc-docs.firstinspires.org/en/latest/control_hard_compon/rc_components/power_distr/power-distr.html#main-power-switch"><h1>Power Switch</h1></a>
             </div>
           </div>
@@ -89,12 +89,12 @@
         <div class="center-all">
           <div class="flex-horizontal overflow-x" style="width: 15rem; overflow-y: hidden; max-width: 300px;" >
             <div class="flex-column">
-              <img src="{{ url_for('static', filename='images/intellij-logo.png') }}" width="100%" style="max-width: 15.625rem;">
+              <img src="{{ url_for('resources.static', filename='images/intellij-logo.png') }}" width="100%" style="max-width: 15.625rem;">
               <a href="https://www.jetbrains.com/idea/download/?section=windows"><h1>Intellij IDE</h1></a>
               <a href="https://plugins.jetbrains.com/plugin/18659-onbotstudio"><h1>Plugin</h1></a>
             </div>
             <div class="flex-column">
-              <img src="{{ url_for('static', filename='images/rev-robotics.png') }}" width="100%" style="max-width: 15.625rem;">
+              <img src="{{ url_for('resources.static', filename='images/rev-robotics.png') }}" width="100%" style="max-width: 15.625rem;">
               <a href="https://docs.revrobotics.com/rev-hardware-client"><h1>Rev Hardware Client</h1></a>
             </div>
           </div>
@@ -131,7 +131,7 @@
         </div>
       </div>
       <div>
-        <a href="https://ftcsim.org/"><img src="{{ url_for('static', filename='images/ftcsim-level.png') }}" width="100%" height="100%" class="medium-border-radius image wider-image img-border"></a>
+        <a href="https://ftcsim.org/"><img src="{{ url_for('resources.static', filename='images/ftcsim-level.png') }}" width="100%" height="100%" class="medium-border-radius image wider-image img-border"></a>
       </div>
     </div>
   </section>
