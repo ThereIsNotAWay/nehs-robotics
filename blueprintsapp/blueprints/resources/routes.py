@@ -1,6 +1,6 @@
 from flask import request, render_template, redirect, url_for, Blueprint
 
-resources = Blueprint('resources', __name__, template_folder='templates')
+resources = Blueprint('resources', __name__, template_folder='templates', static_folder='static', static_url_path='resources/static')
 
 @resources.route('/')
 def all_resources():
