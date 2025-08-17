@@ -17,7 +17,7 @@
   <section class="center-all section-text-image dark-section">
     <div>
       <div class="image ">
-        <img src="{{ url_for('static', filename='images/hands-on-work.png') }}" width="100%" height="100%"class="small-border-radius">
+        <img src="{{ url_for('main.static', filename='images/hands-on-work.png') }}" width="100%" height="100%"class="small-border-radius">
       </div>
       <div class="text center-all small-border-radius r1">
         <h1>
@@ -26,92 +26,32 @@
         <hr>
         <p>
           We are trying to build a comprehensive team with passionate members to step into the STEM world of fields.
-          <!-- We are trying to build a comprehensive team with members that are willing to dedicate time and effort to becoming a strong competitor against other teams. -->
         </p>
       </div>
     </div>
 
   </section>
-  <!--<section class="center-all dark-section" style="position: relative;">
-    <div style=" width: 100%; max-width: 1440px;">
-      <div class="center-all" style="margin-bottom: 80px;">
-        <h1 style="font-size: xx-large;">
-          Meet Our Team
-        </h1>
-      </div>
-      <div class="flex-horizontal flex-wrap" style="display: flex; justify-content: center; gap: 3rem;">
-        <div class="flex-column">
-          <div class="semi-large-border-radius home-column">
-            <img src="/placeholder/images/" class="semi-large-border-radius" width="100%" height="100%">
-          </div>
-          <div class="home-column-box small-border-radius center-all">
-            <h2>Person</h2>
-            <span>Role</span>
-          </div>
-        </div>
-        <div class="flex-column">
-          <div class="semi-large-border-radius home-column">
-            <img src="/placeholder/images/" class="semi-large-border-radius" width="100%" height="100%">
-          </div>
-          <div class="home-column-box small-border-radius center-all">
-            <h2>Person</h2>
-            <span>Role</span>
-          </div>
-        </div>
-        <div class="flex-column">
-          <div class="semi-large-border-radius home-column">
-            <img src="/placeholder/images/" class="semi-large-border-radius" width="100%" height="100%">
-          </div>
-          <div class="home-column-box small-border-radius center-all">
-            <h2>Person</h2>
-            <span>Role</span>
-          </div>
-        </div>
-          <div class="flex-column" >
-          <div class="semi-large-border-radius home-column" >
-            <img src="/placeholder/images/" class="semi-large-border-radius" width="100%" height="100%">
-          </div>
-          <div class="home-column-box small-border-radius center-all">
-            <h2>Person</h2>
-            <span>Role</span>
-          </div>
-        </div>
-        <div class="flex-column">
-          <div class="semi-large-border-radius home-column">
-            <img src="/placeholder/images/" class="semi-large-border-radius" width="100%" height="100%">
-          </div>
-          <div class="home-column-box small-border-radius center-all">
-            <h2>Person</h2>
-            <span>Role</span>
-          </div>
-        </div> 
-      </div>
-    </div>
-  </section>-->
   <section class="center-all dark-section">
     <div class="center-all" style="width: 70%; margin-bottom: 40px;">
       <div><h1>The Role You Can Be</h1></div>
       <div class="flex-horizontal flex-wrap role-container">
         <div class="role-box small-border-radius"> 
           <div>
-            <img src="{{ url_for('static', filename='images/tools_icon-removebg-preview.png') }}" height="50px"> 
-            <!-- https://www.pinterest.com/pin/692991461416439800/ -->
+            <img src="{{ url_for('main.static', filename='images/tools_icon-removebg-preview.png') }}" height="50px"> 
             <h2>Builder</h2>
             <p>The role of a builder is to assemble the builds.</p>
           </div>
         </div>
         <div class="role-box small-border-radius">
           <div>
-            <img src="{{ url_for('static', filename='images/notebook-removebg-preview.png') }}" height="50px">
-            <!-- https://www.pinterest.com/pin/613967361698934824/ -->
+            <img src="{{ url_for('main.static', filename='images/notebook-removebg-preview.png') }}" height="50px">
             <h2>Designer</h2>
             <p>The role of a designer is to create designs for the builds.</p>
           </div>
         </div>
         <div class="role-box small-border-radius">
           <div>
-            <img src="{{ url_for('static', filename='images/laptop-removebg-preview.png') }}" height="50px">
-            <!-- https://www.pinterest.com/pin/505951339399149498/ -->
+            <img src="{{ url_for('main.static', filename='images/laptop-removebg-preview.png') }}" height="50px">
             <h2>Coder</h2>
             <p>The role of a coder is to write code for the builds.</p>
           </div>
@@ -166,53 +106,6 @@
       
     </div>
   </section>
-  <!-- <section class="center-all dark-section">
-    <div style="width: 90%; max-width: 1500px;">
-      <div class="center-all" style="margin-bottom: 60px;">
-        <h1 style="font-size: xx-large;">Showcase Of Our Works</h1>
-      </div>
-      <div class="flex-horizontal flex-wrap" style="display: flex; justify-content: space-around;">
-        <div>
-          <div class="medium-border-radius spline-container">
-            <div class="spline-image FTCYear23-24">
-              <img src="/placeholder/images/2023-2024-FTC-Robot.png" width="100%" height="100%">
-            </div>
-            <div class="spline-obj FTCYear23-24" style="display: none;">
-              <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.6/build/spline-viewer.js"></script>
-              <spline-viewer loading-anim-type="spinner-big-light" url="https://prod.spline.design/cyRb28KbVlE6Y-kV/scene.splinecode" class="spline-obj"></spline-viewer>
-            </div>
-          </div>
-          <div class="spline-description ">
-            <h2>2023 - 2024 FTC Robot</h2>
-            <span>Model of our robot built that competed in First Tech Challenge.</span>
-          </div>
-          <div>
-            <button onclick="changeSplineQuality('2d', 'FTCYear23-24')" class="spline-buttons">2D Model</button>
-            <button onclick="changeSplineQuality('3d', 'FTCYear23-24')" class="spline-buttons">3D Model</button>
-          </div>
-        </div>
-        <div>
-          <div class="medium-border-radius spline-container">
-            <div class="spline-image SeaGlideYear23-24">
-              <img src="/placeholder/images/2023-2024-SeaGlide-Drone.png" width="100%" height="100%">
-            </div>
-            <div class="spline-obj SeaGlideYear23-24" style="display: none;">
-              <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.6/build/spline-viewer.js"></script>
-              <spline-viewer loading-anim-type="spinner-big-light" url="https://prod.spline.design/9gTrSqNmXG8fab9J/scene.splinecode" class="spline-obj"></spline-viewer>
-            </div>
-          </div>
-          <div class="spline-description">
-            <h2>2023 - 2024 SeaGlide Drone</h2>
-            <span>Model of our underwater drone that competed in SeaGlide.</span>
-          </div>
-          <div >
-            <button onclick="changeSplineQuality('2d', 'SeaGlideYear23-24')" class="spline-buttons">2D Model</button>
-            <button onclick="changeSplineQuality('3d', 'SeaGlideYear23-24')" class="spline-buttons">3D Model</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
   <section class="center-all dark-section">
     <div class="text-image-vertical center-all">
       <div class="text">
@@ -224,12 +117,11 @@
           <button onclick="iterateSplineObj(-1)"  class="medium-border-radius spline-switch-buttons">←</button>
           <button onclick="iterateSplineObj(1)" class="medium-border-radius spline-switch-buttons">→</button>
         </div>
-        <!-- <img src="images/Drone hovering over water.jpg" width="100%" height="100%" class="medium-border-radius"> -->
         {% for spline in spline_objects %}
           <div class="spline-display" style="display: none;">
             <div class="medium-border-radius spline-container">
               <div class="spline-image {{ spline.spline_name }}">
-                <img src="{{ url_for('static', filename='images/' + spline.spline_image) }}" width="100%" height="100%">
+                <img src="{{ url_for('main.static', filename='images/' + spline.spline_image) }}" width="100%" height="100%">
               </div>
               <div class="spline-obj {{ spline.spline_name }}" style="display: none">
                 <script type="module" src="{{ spline.spline_script }}"></script>
@@ -246,7 +138,6 @@
             </div>
           </div>
         {% endfor %}
-        
       </div>
     </div>
   </section>
