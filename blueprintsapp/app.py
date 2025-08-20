@@ -2,6 +2,8 @@ from os import environ
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from flask_cors import CORS
+from flask_talisman import Talisman
 
 db = SQLAlchemy()
 
@@ -24,6 +26,17 @@ def create_app():
   app.register_blueprint(news, url_prefix='/news')
   app.register_blueprint(gallery, url_prefix='/gallery')
   app.register_blueprint(resources, url_prefix='/resources')
+
+  origin_domain = environ.get("ORIGIN_DOMAIN_DEV")
+  csp = {
+    'default-src': ['\'self\'', origin_domain],
+    'style-src': ['\'self\'', origin_domain],
+    'script-src': ['\'self\'', origin_domain],
+    'img-src': ['\'self\'', origin_domain],
+  }
+  Talisman(app, content_security_policy=csp)
+
+  CORS(app, resources={r'/*': {"origins": origin_domain}})
 
   @app.errorhandler(404)
   def global_404(e):
