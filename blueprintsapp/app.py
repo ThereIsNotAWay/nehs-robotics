@@ -27,7 +27,7 @@ def create_app():
   app.register_blueprint(gallery, url_prefix='/gallery')
   app.register_blueprint(resources, url_prefix='/resources')
 
-  origin_domain = environ.get("ORIGIN_DOMAIN_DEV")
+  origin_domain = environ.get("ORIGIN_DOMAIN")
   csp = {
     'default-src': ['\'self\'', origin_domain],
     'style-src': ['\'self\'', origin_domain],
