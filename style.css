@@ -1046,8 +1046,7 @@ nav {
 
 .landing-statement {
   display: flex;
-  width: 50%;
-  height: 100%;
+  width: 100%;
   margin: auto;
   justify-content: center;
   align-items: center;
@@ -1057,6 +1056,7 @@ nav {
   font-weight: 400;
   font-size: clamp(0.5rem, calc(1.8vw + 0.5rem), 2.813rem);
   text-wrap: nowrap;
+  padding: 1.2rem;
 }
 
 .bold-recolor {
@@ -1066,12 +1066,12 @@ nav {
 
 .landing-image {
   display: flex;
-  width: 50%;
+  width: 100%;
 }
 
 .landing-image img {
   border: solid 0.24rem #591a1b;
-  max-width: 42vw;
+  max-width: 40vw;
 }
 
 .circular-mask {
@@ -1084,7 +1084,6 @@ nav {
   display: flex;
   margin: auto;
   background-color: #25291c;
-  height: 42vh;
   justify-content: center;
   align-items: center;
 }
@@ -1101,13 +1100,81 @@ nav {
 .mission-text h1 {
   color: #f3ece4;
   font-weight: 700;
-  font-size: clamp(0.5rem, calc(1.6vw + 0.5rem), 2.813rem);
+  font-size: clamp(1.2rem, calc(1.6vw + 0.5rem), 2.813rem);
 }
+
 .mission-text p {
   color: #f3ece4;
   font-weight: 400;
   padding-top: 1.2rem;
-  font-size: clamp(0.5rem, calc(0.6vw + 0.5rem), 1.213rem);
+  font-size: clamp(0.8rem, calc(0.6vw + 0.5rem), 1.213rem);
+}
+
+#info-accordions {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  background-color: #FFF8F0;
+  justify-content: center;
+  align-items: center;
+}
+
+.expandable {
+  --xy-padding: 0.8em;
+  max-width: 60vw;
+  margin-top: 1.6em;
+  font-size: 24px;
+}
+
+.nehs {
+  margin-bottom: 1.6em;
+}
+
+.expandable--open .expandable-content-wrapper {
+  grid-template-rows: 1fr;
+}
+
+.expandable--open .expandable-icon {
+  transform: rotate(90deg);
+}
+
+.expandable-title-bar {
+  display: flex;
+  align-items: center;
+  padding: var(--xy-padding);
+  user-select: none;
+  background-color: #9E4243;
+  color: #f3ece4;
+  cursor: pointer;
+  width: 60vw;
+}
+
+.expandable-title {
+  font-weight: 700;
+  padding: 0.4rem;
+}
+
+.expandable-icon {
+  transition: transform 0.3s ease-out;
+}
+
+.expandable-content {
+  padding: 0 var(--xy-padding);
+  line-height: 1.4;
+  font-size: 0.85em;
+  border: 1px solid #dddddd;
+  border-top: none;
+  overflow: hidden;
+}
+
+.expandable-content p {
+  padding: 0.8em 0;
+}
+
+.expandable-content-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-out;
 }
 
 .wip {

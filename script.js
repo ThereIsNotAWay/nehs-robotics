@@ -15,6 +15,7 @@ loadElement(header, 'header');
 loadElement(footer, 'footer');
 loadElement(document.querySelector(".wip"), 'wip_page');*/
 
+/* HEADER SCROLL */
 const header = document.querySelector("header");
 
 window.addEventListener('scroll', () => {
@@ -26,7 +27,9 @@ window.addEventListener('scroll', () => {
   }
 
 });
+/* END HEADER SCROLL */
 
+/* HOMEPAGE */
 let backgrounds = document.querySelectorAll(".background");
 
 let imageIndex = 0;
@@ -43,6 +46,29 @@ function changeBackground() {
 
 }
 
+function changeQuality (quality) {
+
+  const images = document.getElementsByClassName("image-list");
+  const splines = document.getElementsByClassName("spline-obj");
+
+  let i = 0;
+
+  if (quality == "2d") {
+    for (i = 0; i < images.length; i++) {
+      splines[i].style.display = "none";
+      images[i].style.display = "grid";
+    }
+  } else if (quality == "3d") {
+    for (i = 0; i < splines.length; i++) {
+      images[i].style.display = "none";
+      splines[i].style.display = "flex";
+    }
+  }
+
+}
+/* END HOMEPAGE */
+
+/* NAVBAR */
 setInterval(changeBackground, 4000);
 
 const navbar = document.getElementById('navbar');
@@ -78,27 +104,20 @@ function closeSidebar() {
 }
 
 updateNavbar(media);
+/* END NAVBAR */
 
-function changeQuality (quality) {
+/* ABOUT PAGE */
+document.body.addEventListener("click", (ev) => {
+  const isExpandableTitle = !!ev.target.closest(".expandable-title-bar");
+  const expandable = ev.target.closest(".expandable");
 
-  const images = document.getElementsByClassName("image-list");
-  const splines = document.getElementsByClassName("spline-obj");
-
-  let i = 0;
-
-  if (quality == "2d") {
-    for (i = 0; i < images.length; i++) {
-      splines[i].style.display = "none";
-      images[i].style.display = "grid";
-    }
-  } else if (quality == "3d") {
-    for (i = 0; i < splines.length; i++) {
-      images[i].style.display = "none";
-      splines[i].style.display = "flex";
-    }
+  if (!isExpandableTitle) {
+    return;
   }
 
-}
+  expandable.classList.toggle("expandable--open");
+});
+/* END ABOUT PAGE */
 
 /* Currently inactive.
 //Slide images according to button clicks.
