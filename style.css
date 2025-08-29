@@ -609,6 +609,7 @@ nav {
 .about-text {
   z-index: 200;
   padding: 7vw;
+  line-height: 1.4;
 }
 
 .about-text h1 {
@@ -1050,6 +1051,7 @@ nav {
   margin: auto;
   justify-content: center;
   align-items: center;
+  line-height: 1.4;
 }
 
 .landing-statement h1 {
@@ -1083,7 +1085,7 @@ nav {
 #mission-statement {
   display: flex;
   margin: auto;
-  background-color: #25291c;
+  background-color: #25291C;
   justify-content: center;
   align-items: center;
 }
@@ -1095,6 +1097,7 @@ nav {
   text-align: center;
   padding: 4.2rem;
   inline-size: 85ch;
+  line-height: 1.4;
 }
 
 .mission-text h1 {
