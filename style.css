@@ -360,8 +360,7 @@ nav {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 1rem;
-    border-bottom: 0.1rem solid #9A1815;
+    padding: 0.84rem;
   }
 
   .footer-find-more {
@@ -370,15 +369,14 @@ nav {
     width: 100%;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
-    border-bottom: 0.1rem solid #9A1815;
+    padding: 0.84rem;
   }
 
   .footer-logo {
     width: 100%;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 0.84rem;
   }
 
 }
@@ -1106,11 +1104,23 @@ nav {
   .landing-statement h1 {
     margin-top: 1.6rem;
     margin-left: 0;
-    font-size: 32px;
+    font-size: clamp(0.5rem, calc(3.6vw + 0.5rem), 4.813rem);;
   }
 
   .about-landing-container {
     flex-direction: column;
+  }
+
+  .image-grid-col-2 {
+    grid-column: span 2;
+  }
+  
+  .image-grid-row-2 {
+    grid-row: span 1;
+  }
+
+  .image-grid {
+    --num-cols: 2;
   }
 
 }
