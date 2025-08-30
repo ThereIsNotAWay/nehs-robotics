@@ -64,7 +64,7 @@ nav {
 }
 
 .navlinks li a {
-  font-weight: 300;
+  font-weight: 400;
   font-size: clamp(1.3rem, calc(10vw + 0.5rem), 1.6rem);
   text-decoration: none;
   text-transform: none;
@@ -149,9 +149,9 @@ nav {
     height: 100vh;
     width: min(20em, 100%);
     z-index: 500;
-    border-left: 1px solid #691f20;
+    border-left: 8px solid #730709;
     align-items: flex-start;
-    background-color: #F4EDEC;
+    background-color: #fffffc;
     transition: right 300ms ease-out;
   }
 
@@ -361,7 +361,7 @@ nav {
     justify-content: center;
     width: 100%;
     padding: 1rem;
-    border-bottom: 0.1rem solid #591a1b;
+    border-bottom: 0.1rem solid #9A1815;
   }
 
   .footer-find-more {
@@ -371,7 +371,7 @@ nav {
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    border-bottom: 0.1rem solid #591a1b;
+    border-bottom: 0.1rem solid #9A1815;
   }
 
   .footer-logo {
@@ -411,7 +411,7 @@ nav {
   object-fit: cover;
   opacity: 0;
   transition: opacity 2s ease-in-out;
-  mask-image: linear-gradient(to right, transparent -50%, 70%, black);
+  mask-image: linear-gradient(to right, transparent -50%, 75%, #fffffc);
 }
 
 .showing {
@@ -433,17 +433,17 @@ nav {
   font-weight: 700;
   font-size: clamp(1.3rem, calc(8vw + 0.5rem), 2.813rem);
   text-decoration: none;
-  color: #9E4243;
+  color: #9A1815;
   white-space: wrap;
   inline-size: 0;
 }
 
 .landing p {
   z-index: 200;
-  font-weight: 300;
+  font-weight: 400;
   font-size: clamp(0.8rem, calc(1.5vw + 0.5rem), 1.3rem);;
   text-decoration: none;
-  color: rgb(206, 206, 206);
+  color: white;
   white-space: nowrap;
   padding-top: 0.5rem;
 }
@@ -490,7 +490,7 @@ nav {
   display: flex;
   position: absolute;
   bottom: 0;
-  background: #691f20;
+  background: #730709;
   z-index: 300;
   width: 100%;
   justify-content: center;
@@ -506,7 +506,7 @@ nav {
 
 .choice-a {
   width: 50%;
-  border-right: 0.0001rem solid #f4edec;
+  border-right: 0.0001rem solid white;
   padding-top: 2.5vh;
   padding-bottom: 3vh;
   padding-left: 3vw;
@@ -516,13 +516,13 @@ nav {
   z-index: 200;
   font-weight: 700;
   font-size: clamp(1rem, calc(1.8vw + 0.1rem), 1.5rem);
-  color: #F4EDEC;
+  color: white;
   white-space: nowrap;
 }
 
 .choice-a p {
   z-index: 200;
-  font-weight: 300;
+  font-weight: 400;
   font-size: clamp(0.5rem, calc(1vw + 0.1rem), 1rem);
   color: rgb(206, 206, 206);
 }
@@ -539,13 +539,13 @@ nav {
   z-index: 200;
   font-weight: 700;
   font-size: clamp(1rem, calc(1.8vw + 0.1rem), 1.5rem);
-  color: #F4EDEC;
+  color: white;
   white-space: nowrap;
 }
 
 .choice-b p {
   z-index: 200;
-  font-weight: 300;
+  font-weight: 400;
   font-size: clamp(0.5rem, calc(1vw + 0.1rem), 1rem);
   color: rgb(56, 49, 49);
 }
@@ -564,7 +564,7 @@ nav {
     padding: 1em;
     width: 100%;
     border-right: unset;
-    border-bottom: 0.05rem solid #F4EDEC;
+    border-bottom: 0.05rem solid white;
   }
 
   .choice-a h1 {
@@ -594,12 +594,11 @@ nav {
 #brief-about {
   display: flex;
   z-index: 200;
-  background: #fff8f0;
+  background: #fffffc;
   align-items: center;
   justify-content: center;
   text-align: left;
   margin: auto;
-  padding: 3.2rem 0;
 }
 
 .about-text-container {
@@ -622,11 +621,11 @@ nav {
 
 .about-text p {
   z-index: 200;
-  font-weight: 300;
+  font-weight: 400;
   font-size: clamp(0.5rem, calc(1vw + 0.1rem), 3rem);
   text-decoration: none;
   color: black;
-  padding-top: 1.3em;
+  padding-top: 1.2em;
 }
 
 .about-img {
@@ -639,7 +638,7 @@ nav {
 }
 
 .about-img img {
-  padding: 10rem 1em;
+  padding: 8em 1em;
   width: 75%;
   height: auto;
   filter: drop-shadow(10px 5px 5px gray);
@@ -649,7 +648,7 @@ nav {
 
   #brief-about {
     flex-direction: column;
-    padding: 1em;
+    padding: 0.8em;
   }
 
   .about-text-container {
@@ -678,9 +677,9 @@ nav {
 #sponsors {
   display: flex;
   margin: auto;
-  background: #FFF8F0;
-  border-top: 0.5rem solid #f3ece4;
-  border-bottom: 0.5rem solid #f3ece4;
+  background: #fffffc;
+  border-top: 0.8rem solid #9A1815;
+  border-bottom: 0.8rem solid #9A1815;
 }
 
 .sponsor-gallery-container {
@@ -813,7 +812,7 @@ nav {
 #design-gallery {
   display: flex;
   margin: auto;
-  background-color: #FFF8F0;
+  background-color: #fffffc;
   padding: 3.2rem 0;
 }
 
@@ -848,7 +847,7 @@ nav {
 }
 
 .spline-buttons {
-  background-color: #25291C;
+  background-color: #181811;
   border: none;
   color: white;
   padding: 1.2em 1.2em;
@@ -865,7 +864,7 @@ nav {
 
 .design-gallery-container a {
   color: black;
-  font-weight: 300;
+  font-weight: 400;
   font-size: clamp(1rem, calc(1vw + 0.5rem), 2.5rem);
 }
 
