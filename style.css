@@ -64,7 +64,7 @@ nav {
 }
 
 .navlinks li a {
-  font-weight: 400;
+  font-weight: 300;
   font-size: clamp(1.3rem, calc(10vw + 0.5rem), 1.6rem);
   text-decoration: none;
   text-transform: none;
@@ -440,10 +440,10 @@ nav {
 
 .landing p {
   z-index: 200;
-  font-weight: 400;
-  font-size: clamp(0.8rem, calc(1.5vw + 0.5rem), 1.3rem);;
+  font-weight: 300;
+  font-size: clamp(0.8rem, calc(1.4vw + 0.5rem), 1.28rem);;
   text-decoration: none;
-  color: white;
+  color: rgb(196, 196, 196);
   white-space: nowrap;
   padding-top: 0.5rem;
 }
@@ -855,7 +855,7 @@ nav {
 }
 
 .spline-buttons:hover {
-  background-color: #383e2b;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .spline-buttons:active {
@@ -864,7 +864,7 @@ nav {
 
 .design-gallery-container a {
   color: black;
-  font-weight: 400;
+  font-weight: 300;
   font-size: clamp(1rem, calc(1vw + 0.5rem), 2.5rem);
 }
 
