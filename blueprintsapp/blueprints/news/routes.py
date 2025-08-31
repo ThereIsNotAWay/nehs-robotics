@@ -11,10 +11,10 @@ def display_news_articles():
   news_articles = NewsArticle.query.order_by(desc(NewsArticle.publication_date)).all()
   return render_template('news/news_catalog.html', news_articles=news_articles)
 
-@news.route('/<news_headline>')
-def retrieve_news(news_headline):
+@news.route('/<news_headline>/<public_date>')
+def retrieve_news(news_headline, public_date):
   news_headline = news_headline.replace('-', ' ')
-  article = NewsArticle.get_article(news_headline)
+  article = NewsArticle.get_article(public_date)
 
   if not article:
     return render_template('wip_page.html')

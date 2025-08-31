@@ -15,7 +15,7 @@
         <p>{{ primary_news_article }}</p>
       </div>
       <div class="news-feature-read-more">
-        <a href="{{ url_for('news.retrieve_news', news_headline=primary_news_article['news_headline'].replace(' ', '-')|lower) }}">Read More</a>
+        <a href="{{ url_for('news.retrieve_news', news_headline=primary_news_article['news_headline'].replace(' ', '-')|lower, public_date=primary_news_article['publication_date']) }}">Read More</a>
       </div>
     </div>
   </div>
@@ -30,7 +30,7 @@
             <h2>{{ news_articles[index] }}</h2>
           </div>
           <div class="news-feature-read-more">
-            <a href="{{ url_for('news.retrieve_news', news_headline=news_articles[index]['news_headline'].replace(' ', '-')|lower) }}">Read More</a>
+            <a href="{{ url_for('news.retrieve_news', news_headline=news_articles[index]['news_headline'].replace(' ', '-')|lower, public_date=news_articles[index]['publication_date']) }}">Read More</a>
           </div>
         </div>
       {% elif index > news_articles|length and news_articles|length > 1 %}

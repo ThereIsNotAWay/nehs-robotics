@@ -16,5 +16,5 @@ class NewsArticle(db.Model):
     return f'{self.news_headline}'
   
   @classmethod
-  def get_article(cls, headline):
-    return cls.query.filter_by(news_headline = headline).first()
+  def get_article(cls, date):
+    return cls.query.filter_by(publication_date = date).first()
