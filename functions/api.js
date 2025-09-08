@@ -7,6 +7,7 @@ export async function fetchPage(context) {
   const path = url.pathname;
 
   try {
+    const response = await fetch(`${baseUrl}${path}`);
     const routes = ['/', '/about', '/news', '/gallery', '/resources', '/contacts']
 
     if (!response.ok) {
