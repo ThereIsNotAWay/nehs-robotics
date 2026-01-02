@@ -1256,7 +1256,8 @@ nav {
   align-items: center;
   flex-direction: column;
   margin: auto;
-  text-align: left;
+  text-align: center;
+  background-color: #fffffc;
 }
 
 .wip img {
