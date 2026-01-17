@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/tailwind.css">
     <link rel="shortcut icon" type="x-icon" href="images/logo.png">
     <script defer src="script.js"></script>
     <!-- Necessary for Inter font -->
@@ -41,20 +42,23 @@
       <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
     </header>
     <main class="main">
-      <section id="news-board-wrapper center-flex">
-        <div class="news-title">
-          <h1>Latest News</h1>
-          <button class="filter-buttons">General</button>
-          <button class="filter-buttons">FRC</button>
-          <button class="filter-buttons">FTC</button>
-          <button class="filter-buttons">SeaGlide</button>
+      <section id="news-board-wrapper tw-container tw-mx-auto center-flex">
+        <div class="news-title tw-bg-[#730709] tw-text-white">
+          <h1 class="tw-left-5 tw-pl-12 tw-pr-12 tw-pt-12">Latest News</h1>
+          <div class="button-divider tw-pl-11 tw-pr-11 tw-pt-4 tw-p-4">
+            <button class="filter-buttons filter-active">All</button>
+            <button class="filter-buttons">General</button>
+            <button class="filter-buttons">FRC</button>
+            <button class="filter-buttons">FTC</button>
+            <button class="filter-buttons">SeaGlide</button>
+          </div>
         </div>
-        <div class="news-content">
-          <div class="focus-large center-flex">
+        <div class="news-content tw-flex">
+          <div class="focus-large">
             <img src="images/nehs_bensalem.jpg">
           </div>
           <div class="focus-small">
-            
+            <img src="images/nehs_front.jpg">
           </div>
         </div>
       </section>
