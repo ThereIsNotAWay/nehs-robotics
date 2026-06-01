@@ -1,0 +1,75 @@
+@import url('../public/css/rajdhani.css');
+@import "tailwindcss";
+
+:root {
+    --brand-primary-red: #73060A;
+    --brand-primary-black: #181811;
+    --brand-primary-neutral: #FFFFFB;
+    --body-one: 1.25rem;
+    --body-two: 1rem;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+    background: var(--brand-primary-neutral);
+    margin: 0;
+    font-family: 'Rajdhani-Medium';
+}
+
+h1 {
+    font-size: 2.75rem;
+    font-family: 'Rajdhani-Bold';
+}
+
+h2 {
+    font-size: 2.25rem;
+    font-family: 'Rajdhani-Bold';
+}
+
+h3 {
+    font-size: 2rem;
+    font-family: 'Rajdhani-Bold';
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-family: 'Rajdhani-Bold';
+}
+
+button {
+    font-size: 1.25rem;
+    font-family: 'Rajdhani-Medium';
+}
+
+nav {
+    border-style: solid;
+    border-color: var(--brand-primary-black);
+    border-radius: 10px;
+    border-width: 2px;
+}
+
+p {
+    font-family: 'Rajdhani-Medium';
+    font-size: 1.25rem;
+    color: var(--brand-primary-black);
+}
+
+#landing {
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    top: 0;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero-text {
+    position: absolute;
+    left: 0;
+    padding: 8em;
+    margin-top: 4em;
+}
