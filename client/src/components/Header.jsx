@@ -3,7 +3,7 @@ import logo from '/src/assets/logo.png';
 const Header = () => {
     return (
         <>
-            <div className="p-4 top-0 sticky z-10">
+            <header className="p-4 top-0 fixed z-10 w-full">
                 <nav id="navbar" className="flex items-center w-full p-1 pl-8 pr-8 bg-(--brand-primary-neutral)">
                     <div className="logo-container flex flex-row gap-3 items-center p-3.5">
                         <img src={logo} alt="Vikings Robotics Logo" className="w-15"/>
@@ -16,7 +16,7 @@ const Header = () => {
                         <button className="bg-(--brand-primary-red) text-(--brand-primary-neutral) pt-2 pb-2 pl-6 pr-6 rounded-xl">Join Us!</button>
                     </ul>
                 </nav>
-            </div>
+            </header>
         </>
     )
 }

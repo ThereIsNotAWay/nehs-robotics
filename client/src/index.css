@@ -1,4 +1,4 @@
-@import url('../public/css/rajdhani.css');
+@import url('/css/rajdhani.css');
 @import "tailwindcss";
 
 :root {
@@ -39,6 +39,11 @@ h4 {
     font-family: 'Rajdhani-Bold';
 }
 
+h5 {
+    font-size: 2rem;
+    font-family: 'Rajdhani-Semibold';
+}
+
 button {
     font-size: 1.25rem;
     font-family: 'Rajdhani-Medium';
@@ -57,19 +62,71 @@ p {
     color: var(--brand-primary-black);
 }
 
+a {
+    font-family: 'Rajdhani-Medium';
+    font-size: 1.25rem;
+    color: var(--brand-primary-neutral);
+}
+
+footer {
+    background-color: var(--brand-primary-red);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    height: 11rem;
+    width: 100%;
+    color: var(--brand-primary-neutral);
+}
+
+#button-variant-3 {
+    background-color: var(--brand-primary-neutral);
+    color: var(--brand-primary-black);
+    border-style: solid;
+    border-color: var(--brand-primary-black);
+    border-radius: 10px;
+    border-width: 2px;
+}
+
 #landing {
     width: 100dvw;
     height: 100dvh;
     display: flex;
-    top: 0;
-    position: absolute;
     justify-content: center;
     align-items: center;
 }
 
 #hero-text {
-    position: absolute;
-    left: 0;
-    padding: 8em;
     margin-top: 4em;
+    margin-right: auto;
+    padding-left: 8em;
+}
+
+.card {
+    border-style: solid;
+    border-color: var(--brand-primary-black);
+    border-radius: 10px;
+    border-width: 2px;
+}
+
+#scattered-gallery > img {
+    width: 23.63rem;
+    height: 15.5rem;
+    object-fit: cover;
+}
+
+#scattered-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 23.63rem);
+    grid-template-rows: repeat(2, 15.5rem);
+    place-items: center;
+}
+
+#highlight {
+    font-size: 1.25rem;
+    font-family: 'Rajdhani-Bold';
+}
+
+#footer-logo {
+    border-left: solid 1px;
+    border-color: var(--brand-primary-neutral);
 }
