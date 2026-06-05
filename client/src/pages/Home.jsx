@@ -58,7 +58,7 @@ const Home = () => {
                     <img src="/src/assets/cta4.jpg" alt="Vikings working from afar."/>
                 </div>
             </div>
-            <div id="call-to-action" className="flex flex-col p-20 items-center">
+            <div id="call-to-action" className="flex flex-col p-20 items-center gap-2">
                 <h1 className="text-center leading-20">Ready to join the Vikings?</h1>
                 <button id="button-variant-3" className="pl-8 pr-8 pt-2 pb-2">Interest Form</button>
             </div>

@@ -7,6 +7,7 @@ const Footer = () => {
                 <div id="socials" className="flex flex-col w-full h-full justify-center pl-20">
                     <h5>Connect With Us</h5>
                     <div className="flex flex-row">
+                        { /* TODO: Add the redirects */ }
                         <img className="w-8 h-auto" src="/src/assets/instagram.svg" alt="Instagram logo."/>
                         <img className="w-10 h-auto" src="/src/assets/tiktok.svg" alt="Tiktok logo."/>
                     </div>

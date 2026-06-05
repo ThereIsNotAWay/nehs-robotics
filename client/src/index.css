@@ -78,6 +78,12 @@ footer {
     color: var(--brand-primary-neutral);
 }
 
+ul > li > a {
+    font-size: 1.5rem;
+    font-family: 'Rajdhani-Bold';
+    color: var(--brand-primary-black);
+}
+
 #button-variant-3 {
     background-color: var(--brand-primary-neutral);
     color: var(--brand-primary-black);
@@ -129,4 +135,36 @@ footer {
 #footer-logo {
     border-left: solid 1px;
     border-color: var(--brand-primary-neutral);
+}
+
+.search-bar {
+    border-style: solid;
+    border-color: var(--brand-primary-black);
+    border-width: 2px;
+}
+
+#filters-container > p {
+    color: var(--brand-primary-neutral);
+}
+
+#filters-container > button {
+    color: var(--brand-primary-neutral);
+    width: fit-content;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    height: 100%;
+}
+
+#filters-container > button:hover {
+    cursor: pointer;
+    background-color: var(--brand-primary-neutral);
+    color: var(--brand-primary-black);
+    border-radius: 1.5rem;
+    border: solid;
+    border-width: 2px;
+    border-color: var(--brand-primary-black);
+}
+
+#resource > a {
+    color: var(--brand-primary-red);
 }
