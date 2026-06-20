@@ -25,19 +25,19 @@ const Home = () => {
                     <img src="/src/assets/2024-2025-FRC-Robot.png" alt="2024-2025 Season FRC Robot"/>
                     <h3 className="leading-8">FIRST Robotics Competition</h3>
                     <p className="w-70 leading-7 pb-2">Held annually for high schoolers across the globe. Students are expected to complete their robot’s production in six-weeks, kicking off in early January.</p>
-                    <button className="bg-(--brand-primary-red) text-(--brand-primary-neutral) pl-12 pr-12 pt-2 pb-2 rounded-xl">Read More</button>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.firstinspires.org/programs/frc/" className="bg-(--brand-primary-red) text-(--brand-primary-neutral) pl-12 pr-12 pt-2 pb-2 rounded-xl">Read More</a>
                 </div>
                 <div className="card flex flex-col w-100 h-200 items-center justify-center text-center p-8 gap-4">
                     <img src="/src/assets/2023-2024-Seaglide-Drone.png" alt="2024-2025 Season FRC Robot"/>
                     <h3 className="leading-8">SeaGlide Challenge</h3>
                     <p className="w-70 leading-7 pb-2">Research and design an autonomous underwater vehicle (AUV). Present and compile findings into a paper. Participate in a code debugging challenge.</p>
-                    <button className="bg-(--brand-primary-red) text-(--brand-primary-neutral) pl-12 pr-12 pt-2 pb-2 rounded-xl">Read More</button>
+                    <a target="_blank" rel="noopener noreferrer" href="https://seaglide.org/" className="bg-(--brand-primary-red) text-(--brand-primary-neutral) pl-12 pr-12 pt-2 pb-2 rounded-xl">Read More</a>
                 </div>
                 <div className="card flex flex-col w-100 h-200 items-center justify-center text-center p-8 gap-4">
                     <img src="/src/assets/2023-2024-FTC-Robot.png" alt="2024-2025 Season FRC Robot"/>
                     <h3 className="leading-8">FIRST Tech Challenge</h3>
                     <p className="w-60 leading-7 pb-2">Held annually for students in grades 7-12. Kicks off in September and robots are generally less complex than those seen in FRC.</p>
-                    <button className="bg-(--brand-primary-red) text-(--brand-primary-neutral) pl-12 pr-12 pt-2 pb-2 rounded-xl">Read More</button>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.firstinspires.org/programs/ftc/" className="bg-(--brand-primary-red) text-(--brand-primary-neutral) pl-12 pr-12 pt-2 pb-2 rounded-xl">Read More</a>
                 </div>
             </div>
             <div id="showcase-header" className="flex flex-col p-8">

@@ -5,11 +5,10 @@ const Footer = () => {
         <>
             <footer>
                 <div id="socials" className="flex flex-col w-full h-full justify-center pl-20">
-                    <h5>Connect With Us</h5>
-                    <div className="flex flex-row">
-                        { /* TODO: Add the redirects */ }
-                        <img className="w-8 h-auto" src="/src/assets/instagram.svg" alt="Instagram logo."/>
-                        <img className="w-10 h-auto" src="/src/assets/tiktok.svg" alt="Tiktok logo."/>
+                    <h5 className="leading-10">Connect With Us</h5>
+                    <div className="flex flex-row items-center">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/nehs.robotics?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img className="w-8 h-auto" src="/src/assets/instagram.svg" alt="Instagram logo."/></a>
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@nehs.vikings.10143?is_from_webapp=1&sender_device=pc"><img className="w-10 h-auto" src="/src/assets/tiktok.svg" alt="Tiktok logo."/></a>
                     </div>
                 </div>
                 <div id="find-more" className="flex flex-col pb-2 w-full h-full justify-center pl-20">

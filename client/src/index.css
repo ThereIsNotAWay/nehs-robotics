@@ -142,7 +142,7 @@ ul > li > a {
 }
 
 #footer-logo {
-    border-left: solid 1px;
+    border-left: solid 0.5px;
     border-color: var(--brand-primary-neutral);
 }
 
@@ -158,7 +158,6 @@ ul > li > a {
 
 #filters-container > button {
     color: var(--brand-primary-neutral);
-    width: fit-content;
     padding-left: 2rem;
     padding-right: 2rem;
     height: 100%;
@@ -170,7 +169,6 @@ ul > li > a {
     color: var(--brand-primary-black);
     border-radius: 1.5rem;
     border: solid;
-    border-width: 2px;
     border-color: var(--brand-primary-black);
 }
 
