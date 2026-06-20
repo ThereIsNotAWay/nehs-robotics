@@ -1,8 +1,8 @@
 import os
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
-from sqlalchemy import create_engine, text
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from models import Resource, Base
@@ -17,14 +17,17 @@ engine = create_engine(db_uri, connect_args={"application_name":"vikings-robotic
 SessionLocal = sessionmaker(bind=engine)
 Base.metadata.create_all(engine)
 
-@app.route("/api/resources/<category>", methods=['GET'])
-def get_resources(category):
+@app.route("/api/resources", methods=['GET'])
+def get_resources():
     session = SessionLocal()
     try: 
-        if (category == "all"):
-            resources = session.query(Resource).all()
-        else:
-            resources = session.query(Resource).filter(Resource.category.contains(category)).all()
+        category = request.args.get('category')
+        query = session.query(Resource)
+
+        if (category):
+            query = query.filter(Resource.category.contains(category))
+        
+        resources = query.all()
         
         filtered = []
         for r in resources:
@@ -36,7 +39,9 @@ def get_resources(category):
                 "link": r.link
             })
 
-        return jsonify(filtered)
+        return jsonify(filtered), 200
+    except Exception as e:
+        return jsonify({"Error:": str(e)}), 500
     finally:
         session.close()
 

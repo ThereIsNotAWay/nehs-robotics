@@ -62,7 +62,7 @@ const Home = () => {
                 <h1 className="text-center leading-20">Ready to join the Vikings?</h1>
                 <button id="button-variant-3" className="pl-8 pr-8 pt-2 pb-2">Interest Form</button>
             </div>
-            <Footer className="flex items-center justify-center"></Footer>
+            <Footer></Footer>
         </>
     )
 }

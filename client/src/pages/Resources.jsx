@@ -10,7 +10,15 @@ const Resources = () => {
 
     useEffect(() => {
         const fetchResources = async () => {
-            const res = await fetch(`/api/resources/${currFilter}`);
+            let url = currFilter;
+
+            if (currFilter === "all") {
+                url = '/api/resources';
+            } else {
+                url = `/api/resources?category=${currFilter}`;
+            }
+
+            const res = await fetch(url);
 
             if (!res.ok) {
                 throw new Error(`Error: ${res.status}`);
@@ -38,7 +46,6 @@ const Resources = () => {
             <div id="resources-header" className="flex flex-col p-8 pt-40">
                 <h1 className="text-center leading-20">Viking Resources</h1>
                 <p className="text-center leading-7">Find details on competitions, beginner guides, and archived works.</p>
-
             </div>
             <div id="filter-search-container" className="p-8 flex gap-100 justify-center">
                 <div id="filters-container" className="flex justify-center items-center bg-(--brand-primary-black) rounded-3xl">
