@@ -42,7 +42,7 @@ const Resources = () => {
 
     return (
         <>
-            <Header></Header>
+            <Header />
             <div id="resources-header" className="flex flex-col p-8 pt-40">
                 <h1 className="text-center leading-20">Viking Resources</h1>
                 <p className="text-center leading-7">Find details on competitions, beginner guides, and archived works.</p>

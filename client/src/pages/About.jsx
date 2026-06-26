@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 const About = () => {
     return (
         <>
-            <Header></Header>
+            <Header />
                 <div id="resources-header" className="flex flex-col p-16 pt-40">
                     <h6 className="leading-50">STUDENT DRIVEN</h6>
                     <h6 className="leading-50 text-(--brand-primary-red)">BUILDING</h6>

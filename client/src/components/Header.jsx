@@ -1,4 +1,6 @@
 import logo from '/src/assets/logo.png';
+import { motion, transform, useMotionValueEvent, useScroll } from 'motion/react';
+import { useState, useRef } from 'react';
 
 const Header = () => {
     return (
@@ -10,10 +12,10 @@ const Header = () => {
                         <h3 className="text-(--brand-primary-black)">Vikings Robotics</h3>
                     </a>
                     <ul className="flex gap-10 items-center ml-auto p-3.5">
-                        <li><a href="/resources">Resources</a></li>
-                        <li><a href="/gallery">Gallery</a></li>
-                        <li><a href="/about">About</a></li>
-                        <button className="bg-(--brand-primary-red) text-(--brand-primary-neutral) pt-2 pb-2 pl-6 pr-6 rounded-xl">Join Us!</button>
+                        <li><a className="nav-link" href="/resources">Resources</a></li>
+                        <li><a className="nav-link" href="/gallery">Gallery</a></li>
+                        <li><a className="nav-link" href="/about">About</a></li>
+                        <motion.a whileHover={{ scale: 1.1, transition: 0.5 }} whileTap={{ scale: 0.95 }} transition={{ duration: 0.2 }} href="https://forms.gle/RuNvWXXtucnL5UcZ9" target="_blank" rel="noopener noreferrer" id="join-btn" className="bg-(--brand-primary-red) text-(--brand-primary-neutral) pt-2 pb-2 pl-6 pr-6 rounded-xl">Join Us!</motion.a>
                     </ul>
                 </nav>
             </header>
