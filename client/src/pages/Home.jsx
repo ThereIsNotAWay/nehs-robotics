@@ -1,13 +1,10 @@
 import Header from "/src/components/Header";
 import Footer from "/src/components/Footer";
-import Preloader from "/src/components/Preloader";
 import { motion } from "motion/react";
 
 const Home = () => {
     return (
         <>
-            <Preloader />
-
             <Header />
             <div id="landing">
                 <div id="hero-text">
@@ -29,19 +26,19 @@ const Home = () => {
                     <img src="/src/assets/2024-2025-FRC-Robot.png" alt="2024-2025 Season FRC Robot"/>
                     <h3 className="leading-8">FIRST Robotics Competition</h3>
                     <p className="w-70 leading-7 pb-2">Held annually for high schoolers across the globe. Students are expected to complete their robot’s production in six-weeks, kicking off in early January.</p>
-                    <motion.a whileTap={{ scale: 0.95 }} target="_blank" rel="noopener noreferrer" href="https://www.firstinspires.org/programs/frc/" id="card-btn" className="bg-(--brand-primary-red) text-(--brand-primary-neutral) pl-12 pr-12 pt-2 pb-2 rounded-xl">Read More</motion.a>
+                    <motion.a whileTap={{ scale: 0.95 }} target="_blank" rel="noopener noreferrer" href="https://www.firstinspires.org/programs/frc/" className="bg-(--brand-primary-red) text-(--brand-primary-neutral) pl-12 pr-12 pt-2 pb-2 rounded-xl ring-(--brand-primary-red) hover:bg-(--brand-primary-neutral) hover:ring-2 hover:ring-(--brand-primary-black) hover:text-(--brand-primary-black)">Read More</motion.a>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05, transition: { duration: 0.2 } }} transition={{ duration: 0.2 }} className="card flex flex-col w-100 h-175 items-center justify-center text-center p-8 gap-4 shadow-2xl">
                     <img src="/src/assets/2023-2024-Seaglide-Drone.png" alt="2024-2025 Season FRC Robot"/>
                     <h3 className="leading-8">SeaGlide Challenge</h3>
                     <p className="w-70 leading-7 pb-2">Research and design an autonomous underwater vehicle (AUV). Present and compile findings into a paper. Participate in a code debugging challenge.</p>
-                    <a target="_blank" rel="noopener noreferrer" href="https://seaglide.org/" id="card-btn" className="bg-(--brand-primary-red) text-(--brand-primary-neutral) pl-12 pr-12 pt-2 pb-2 rounded-xl">Read More</a>
+                    <motion.a whileTap={{ scale: 0.95 }} target="_blank" rel="noopener noreferrer" href="https://seaglide.org/" className="bg-(--brand-primary-red) text-(--brand-primary-neutral) pl-12 pr-12 pt-2 pb-2 rounded-xl ring-(--brand-primary-red) hover:bg-(--brand-primary-neutral) hover:ring-2 hover:ring-(--brand-primary-black) hover:text-(--brand-primary-black)">Read More</motion.a>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05, transition: { duration: 0.2 } }} transition={{ duration: 0.2 }} className="card flex flex-col w-100 h-175 items-center justify-center text-center p-8 gap-4 shadow-2xl">
                     <img src="/src/assets/2023-2024-FTC-Robot.png" alt="2024-2025 Season FRC Robot"/>
                     <h3 className="leading-8">FIRST Tech Challenge</h3>
                     <p className="w-60 leading-7 pb-2">Held annually for students in grades 7-12. Kicks off in September and robots are generally less complex than those seen in FRC.</p>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.firstinspires.org/programs/ftc/" id="card-btn" className="bg-(--brand-primary-red) text-(--brand-primary-neutral) pl-12 pr-12 pt-2 pb-2 rounded-xl">Read More</a>
+                    <motion.a whileTap={{ scale: 0.95 }} target="_blank" rel="noopener noreferrer" href="https://www.firstinspires.org/programs/ftc/" className="bg-(--brand-primary-red) text-(--brand-primary-neutral) pl-12 pr-12 pt-2 pb-2 rounded-xl ring-(--brand-primary-red) hover:bg-(--brand-primary-neutral) hover:ring-2 hover:ring-(--brand-primary-black) hover:text-(--brand-primary-black)">Read More</motion.a>
                 </motion.div>
             </div>
             <div id="showcase-header" className="flex flex-col p-8">
@@ -57,7 +54,7 @@ const Home = () => {
                     <div></div>
                     <img src="/src/assets/cta2.jpg" alt="Vikings posing with their thumbs up at a competition."/>
                     <div id="gallery-redirect" className="bg-(--brand-primary-red) w-full h-full flex items-center justify-center">
-                        <a id="gallery-link" className="w-full h-full text-center items-center flex justify-center" href="/gallery">See More in our Gallery</a>
+                        <a id="gallery-link" className="w-full h-full text-center items-center flex justify-center text-(--brand-primary-neutral)" href="/gallery">See More in our Gallery</a>
                     </div>
                     <img src="/src/assets/cta4.jpg" alt="Vikings working from afar."/>
                 </div>

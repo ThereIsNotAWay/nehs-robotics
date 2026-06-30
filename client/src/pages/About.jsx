@@ -1,5 +1,6 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { motion } from "motion/react";
 
 const About = () => {
     return (
@@ -33,7 +34,7 @@ const About = () => {
                         <h1 className="pb-4">The Space Research Center (SPARC)</h1>
                         <p>Originally called the Project Space Research Capsule, SPARC was a government and NASA recognized program where students designed and built a three-man space capsule to simulate and test astronaut abilities to handle space environments. <br></br> <br></br> In present day, the SPARC wing in Northeast High School is used for after-school activities encompassing fields of medicine, computer science, engineering, flight, and robotics. Project SPARC Boosters is an organization that sponsors robotics and many of the other after-school programs.</p>
                     </div>
-                    <a target="_blank" rel="noopener noreferrer" href="https://www.nehssparcboosters.org/" id="button-variant-2" className="pt-2 pb-2 pl-8 pr-8 rounded-xl">See Their Page</a>
+                    <motion.a whileTap={{ scale: 0.95 }} target="_blank" rel="noopener noreferrer" href="https://www.nehssparcboosters.org/" className="pt-2 pb-2 pl-8 pr-8 rounded-xl text-(--brand-primary-neutral) bg-(--brand-primary-red) ring-(--brand-primary-red) hover:bg-(--brand-primary-neutral) hover:ring-2 hover:ring-(--brand-primary-black) hover:text-(--brand-primary-black)">See Their Page</motion.a>
                 </div>
             <Footer></Footer>
         </>

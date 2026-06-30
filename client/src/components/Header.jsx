@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <>
             <header className="p-4 top-0 fixed z-10 w-full">
-                <nav id="navbar" className="flex items-center w-full p-1 pl-8 pr-8 bg-(--brand-primary-neutral)">
+                <nav id="navbar" className="flex items-center w-full p-1 pl-8 pr-8 backdrop-blur-3xl brightness-110">
                     <a href="/" className="logo-container flex flex-row gap-3 items-center p-3.5">
                         <img src={logo} alt="Vikings Robotics Logo" className="w-15"/>
                         <h3 className="text-(--brand-primary-black)">Vikings Robotics</h3>

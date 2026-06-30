@@ -69,7 +69,6 @@ p {
 a {
     font-family: 'Rajdhani-Medium';
     font-size: 1.25rem;
-    color: var(--brand-primary-neutral);
 }
 
 footer {
@@ -142,6 +141,28 @@ ul > li > a {
     border-color: #73060A;
 }
 
+#footer-links {
+    position: relative;
+}
+
+#footer-links::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 100%;
+    height: 1px;
+    background: #FFFFFB;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+}
+
+#footer-links:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
 .nav-link {
     position: relative;
 }
@@ -153,7 +174,7 @@ ul > li > a {
     bottom: -2px;
     width: 100%;
     height: 2px;
-    background: black;
+    background: #181811;
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.3s;
@@ -171,15 +192,6 @@ ul > li > a {
 }
 
 .card {
-    border-style: solid;
-    border-color: var(--brand-primary-black);
-    border-radius: 10px;
-    border-width: 2px;
-}
-
-#card-btn:hover {
-    background-color: var(--brand-primary-neutral);
-    color: var(--brand-primary-black);
     border-style: solid;
     border-color: var(--brand-primary-black);
     border-radius: 10px;
