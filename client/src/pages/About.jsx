@@ -20,7 +20,7 @@ const About = () => {
                         <h1 className="pb-2">Our Mission</h1>
                         <p>Robotics at Northeast High School aims to continue creating opportunities for students to design, collaborate, compete, and more. <br></br> <br></br> We strive to foster transferable skills in our students pertaining to the field of engineering and robotics, while bolstering soft skills in teamwork and leadership.</p>
                     </div>
-                    <img src="/src/assets/seaglidestill.png" alt="Vikings in the workshop." className="absolute right-0 top-1/2 -translate-y-1/2"/>
+                    <img src="/assets/seaglidestill.png" alt="Vikings in the workshop." className="absolute right-0 top-1/2 -translate-y-1/2"/>
                 </div>
                 <div id="address-info" className="p-15 pl-30 pr-30 flex flex-row gap-35 items-center justify-center">
                     <div id="address-text">

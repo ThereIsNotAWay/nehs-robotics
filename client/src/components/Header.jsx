@@ -1,4 +1,3 @@
-import logo from '/src/assets/logo.png';
 import { motion, transform, useMotionValueEvent, useScroll } from 'motion/react';
 import { useState, useRef } from 'react';
 
@@ -8,7 +7,7 @@ const Header = () => {
             <header className="p-4 top-0 fixed z-10 w-full">
                 <nav id="navbar" className="flex items-center w-full p-1 pl-8 pr-8 backdrop-blur-3xl brightness-110">
                     <a href="/" className="logo-container flex flex-row gap-3 items-center p-3.5">
-                        <img src={logo} alt="Vikings Robotics Logo" className="w-15"/>
+                        <img src="/assets/logo.png" alt="Vikings Robotics Logo" className="w-15"/>
                         <h3 className="text-(--brand-primary-black)">Vikings Robotics</h3>
                     </a>
                     <ul className="flex gap-10 items-center ml-auto p-3.5">
