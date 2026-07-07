@@ -10,6 +10,7 @@ MarkupSafe==3.0.3
 platformdirs==4.10.0
 psycopg2-binary==2.9.12
 python-discovery==1.4.0
+python-dotenv==1.2.2
 SQLAlchemy==2.0.50
 sqlalchemy-cockroachdb==2.0.4
 typing_extensions==4.15.0
