@@ -141,6 +141,23 @@ ul > li > a {
     border-color: #73060A;
 }
 
+.sparc-btn {
+    background-color: var(--brand-primary-neutral);
+    color: var(--brand-primary-black);
+    border-style: solid;
+    border-color: var(--brand-primary-black);
+    border-radius: 10px;
+    border-width: 2px;
+    box-shadow: inset 0 0 0 0 #FFFFFB;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.sparc-btn:hover {
+    box-shadow: inset 200px 0 0 0 #73060A;
+    color: var(--brand-primary-neutral);
+    border-color: #73060A;
+}
+
 #footer-links {
     position: relative;
 }
@@ -196,6 +213,12 @@ ul > li > a {
     border-color: var(--brand-primary-black);
     border-radius: 10px;
     border-width: 2px;
+    box-shadow: -1px 1px 0px var(--brand-primary-black),
+                -2px 2px 0px var(--brand-primary-black),
+                -3px 3px 0px var(--brand-primary-black),
+                -4px 4px 0px var(--brand-primary-black),
+                -5px 5px 0px var(--brand-primary-black),
+                -6px 6px 0px var(--brand-primary-black);
 }
 
 #scattered-gallery > img {
@@ -274,4 +297,3 @@ ul > li > a {
     border-left: solid #73060A 0.4rem;
     padding: 3rem;
 }
-
