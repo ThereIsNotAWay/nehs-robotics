@@ -12,6 +12,10 @@ const IconLookup = {
     TikTok: tiktok,
 }
 
+/*
+ * Mapping of prop to social link.
+ * Format: [UppercaseSocial] => Social redirect link
+*/
 const LinkLookup = {
     Instagram: "https://www.instagram.com/nehs.robotics/",
     TikTok: "https://www.tiktok.com/@nehs.vikings.10143/",
