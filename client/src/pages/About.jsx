@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { motion } from "motion/react";
+import SocialCard from "../components/SocialCard";
 
 const About = () => {
     return (
@@ -27,14 +28,24 @@ const About = () => {
                         <h1 className="leading-13 pb-4">Based in Northeast <br></br> High School</h1>
                         <p>1601 Cottman Ave <br></br> Philadelphia, PA 19111 <br></br> <br></br> Meet us in the SPARC Wing!</p>
                     </div>
-                    <iframe width="500" height="500" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3053.8840935419366!2d-75.07372712362339!3d40.05568747149999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6b6a519e2d9e1%3A0x45a937f56cb96d67!2sNortheast%20High%20School!5e0!3m2!1sen!2sus!4v1781818951224!5m2!1sen!2sus" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <iframe width="500" height="500" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3053.8840935419366!2d-75.07372712362339!3d40.05568747149999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6b6a519e2d9e1%3A0x45a937f56cb96d67!2sNortheast%20High%20School!5e0!3m2!1sen!2sus!4v1781818951224!5m2!1sen!2sus" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"></iframe>
                 </div>
                 <div id="about-sparc" className="text-center pt-20 pb-20 pl-60 pr-60 flex flex-col items-center justify-center">
                     <div id="about-text" className="pb-6 w-220">
                         <h1 className="pb-4">The Space Research Center (SPARC)</h1>
                         <p>Originally called the Project Space Research Capsule, SPARC was a government and NASA recognized program where students designed and built a three-man space capsule to simulate and test astronaut abilities to handle space environments. <br></br> <br></br> In present day, the SPARC wing in Northeast High School is used for after-school activities encompassing fields of medicine, computer science, engineering, flight, and robotics. Project SPARC Boosters is an organization that sponsors robotics and many of the other after-school programs.</p>
                     </div>
-                    <motion.a whileTap={{ scale: 0.95 }} target="_blank" rel="noopener noreferrer" href="https://www.nehssparcboosters.org/" className="pt-2 pb-2 pl-8 pr-8 rounded-xl text-(--brand-primary-neutral) bg-(--brand-primary-red) ring-(--brand-primary-red) hover:bg-(--brand-primary-neutral) hover:ring-2 hover:ring-(--brand-primary-black) hover:text-(--brand-primary-black)">See Their Page</motion.a>
+                    <motion.a whileTap={{ scale: 0.95 }} target="_blank" rel="noopener noreferrer" href="https://www.nehssparcboosters.org/" className="sparc-btn pt-2 pb-2 pl-8 pr-8 rounded-xl text-(--brand-primary-neutral) bg-(--brand-primary-red) ring-(--brand-primary-red) hover:bg-(--brand-primary-neutral) hover:ring-2 hover:ring-(--brand-primary-black) hover:text-(--brand-primary-black)">See Their Page</motion.a>
+                </div>
+                <div id="social-callout" className="flex flex-col w-full">
+                    <div id="social-callout-text" className="pl-20 flex flex-col pr-20">
+                        <h1>Follow our Socials</h1>
+                        <p>Keep up with our latest developments!</p>
+                    </div>
+                    <div id="social-embed-container" className="flex gap-50 items-center justify-center p-20">
+                        <SocialCard social="Instagram" className="origin-[bottom_right] rotate-6" />
+                        <SocialCard social="TikTok" className="origin-[bottom_left] -rotate-6" />
+                    </div>
                 </div>
             <Footer></Footer>
         </>

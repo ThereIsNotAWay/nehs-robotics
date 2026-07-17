@@ -32,7 +32,7 @@ const Resources = () => {
 
     const renderResources = () => {
         if (resources.length === 0) {
-            return <p>No resources were found.</p>;
+            return <p className="pb-24">No resources were found.</p>;
         }
 
         return resources.map(r => (
@@ -57,7 +57,7 @@ const Resources = () => {
                 <div className="search-bar-container flex items-center">
                     <form action="/search.html" method="GET" className="search-bar flex justify-center items-center p-1 rounded-3xl gap-1">
                         <input type="text" placeholder="Enter a search term" name="query" className="w-100 h-8 rounded-3xl p-4"/>
-                        <button type="submit" className="bg-(--brand-primary-red) rounded-3xl w-19 h-10 flex justify-center items-center"><img src="/src/assets/search.svg" alt="search icon"/></button>
+                        <button type="submit" className="cursor-pointer bg-(--brand-primary-red) rounded-3xl w-19 h-10 flex justify-center items-center"><img src="/assets/search.svg" alt="search icon"/></button>
                     </form>
                 </div>
             </div>
