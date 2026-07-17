@@ -1,8 +1,7 @@
 from sqlalchemy import Column, String, text
 from sqlalchemy.dialects.postgresql import UUID
-from sqlalchemy.orm import declarative_base
 
-Base = declarative_base()
+from api.database import Base
 
 class Resource(Base):
     __tablename__ = "resources"

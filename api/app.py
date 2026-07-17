@@ -1,49 +1,30 @@
-import os
-
-from flask import Flask, jsonify, request
+from os import environ
+from flask import Flask
 from flask_cors import CORS
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from flask_talisman import Talisman
 
-from models import Resource, Base
+def create_app():
+  app = Flask(__name__, template_folder='templates')
+  
+  from api.blueprints.news.routes import news
+  from api.blueprints.gallery.routes import gallery
+  from api.blueprints.resources.routes import resources
 
-app = Flask(__name__)
-cors = CORS(app, origins='*')
+  app.register_blueprint(news, url_prefix='/news')
+  app.register_blueprint(gallery, url_prefix='/gallery')
+  app.register_blueprint(resources, url_prefix='/resources')
 
-# For CockroachCloud:
-# DATABASE_URL=postgresql://<username>:<password>@<globalhost>:26257/<cluster_name>.defaultdb?sslmode=verify-full&sslrootcert=<certs_dir>/<ca.crt>
-db_uri = os.environ['DATABASE_URL'].replace("postgresql://", "cockroachdb://")
-engine = create_engine(db_uri, connect_args={"application_name":"vikings-robotics-api"})
-SessionLocal = sessionmaker(bind=engine)
-Base.metadata.create_all(engine)
+  origin_domain = environ.get("ORIGIN_DOMAIN")
+  csp = {
+    'default-src': ['\'self\'', origin_domain],
+    'style-src': ['\'self\'', origin_domain],
+    'script-src': ['\'self\'', origin_domain],
+    'img-src': ['\'self\'', origin_domain],
+  }
+  Talisman(app, content_security_policy=csp)
 
-@app.route("/api/resources", methods=['GET'])
-def get_resources():
-    session = SessionLocal()
-    try: 
-        category = request.args.get('category')
-        query = session.query(Resource)
+  CORS(app, resources={r'/*': {"origins": origin_domain}})
 
-        if (category):
-            query = query.filter(Resource.category.contains(category))
-        
-        resources = query.all()
-        
-        filtered = []
-        for r in resources:
-            filtered.append({
-                "id": str(r.id),
-                "category": r.category,
-                "title": r.title,
-                "description": r.description,
-                "link": r.link
-            })
+  return app
 
-        return jsonify(filtered), 200
-    except Exception as e:
-        return jsonify({"Error:": str(e)}), 500
-    finally:
-        session.close()
 
-if __name__ == "__main__":
-    app.run(debug=True, port=8080)
