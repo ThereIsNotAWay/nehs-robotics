@@ -64,7 +64,7 @@ const Resources = () => {
             <div id="resources" className="p-20">
                 {renderResources()}
             </div>
-            <Footer></Footer>
+            <Footer />
         </>
     )
 }

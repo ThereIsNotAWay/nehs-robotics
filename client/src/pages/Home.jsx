@@ -63,7 +63,7 @@ const Home = () => {
                 <h1 className="text-center leading-20">Ready to join the Vikings?</h1>
                 <motion.a whileTap={{ scale: 0.95 }} href="https://forms.gle/RuNvWXXtucnL5UcZ9" target="_blank" rel="noopener noreferrer" className="cta-btn pl-8 pr-8 pt-2 pb-2">Interest Form</motion.a>
             </div>
-            <Footer></Footer>
+            <Footer />
         </>
     )
 }
