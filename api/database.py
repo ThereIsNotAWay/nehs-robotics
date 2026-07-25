@@ -7,4 +7,6 @@ Base = declarative_base()
 db_uri = os.environ['DATABASE_URL'].replace("postgresql://", "cockroachdb://")
 engine = create_engine(db_uri, connect_args={"application_name":"vikings-robotics-api"})
 SessionLocal = sessionmaker(bind=engine)
-Base.metadata.create_all(engine)
+
+def init_db():
+  Base.metadata.create_all(engine)
