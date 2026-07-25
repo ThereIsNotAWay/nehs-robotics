@@ -1,6 +1,6 @@
-import instagram from '/assets/instagram_colored.svg';
-import tiktok from '/assets/tiktok_colored.svg';
-import arrowUpright from '/assets/arrow-upright-rounded.svg'
+import instagram from "/assets/instagram_colored.svg";
+import tiktok from "/assets/tiktok_colored.svg";
+import arrowUpright from "/assets/arrow-upright-rounded.svg";
 import { motion } from "motion/react";
 
 /*

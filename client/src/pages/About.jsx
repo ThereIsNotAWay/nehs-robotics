@@ -47,7 +47,7 @@ const About = () => {
                         <SocialCard social="TikTok" className="origin-[bottom_left] -rotate-6" />
                     </div>
                 </div>
-            <Footer></Footer>
+            <Footer />
         </>
     )
 }
