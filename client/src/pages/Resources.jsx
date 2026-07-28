@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion } from "motion/react";
 
 import Header from "/src/components/Header";
 import Footer from "/src/components/Footer";
@@ -47,8 +48,8 @@ const Resources = () => {
                 <h1 className="text-center leading-20">Viking Resources</h1>
                 <p className="text-center leading-7">Find details on competitions, beginner guides, and archived works.</p>
             </div>
-            <div id="filter-search-container" className="p-8 flex gap-100 justify-center">
-                <div id="filters-container" className="flex justify-center items-center bg-(--brand-primary-black) rounded-3xl">
+            <div id="filter-search-container" className="p-8 flex gap-98 justify-center">
+                <div id="filters-container" className="flex justify-center items-center bg-(--brand-primary-black) rounded-3xl h-13">
                     <button onClick={() => setFilter("all")}>All</button>
                     <button onClick={() => setFilter("archive")}>Archive</button>
                     <button onClick={() => setFilter("competitions")}>Competitions</button>

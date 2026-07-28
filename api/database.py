@@ -9,4 +9,7 @@ engine = create_engine(db_uri, connect_args={"application_name":"vikings-robotic
 SessionLocal = sessionmaker(bind=engine)
 
 def init_db():
+  from api.blueprints.resources.models import Resource
+  from api.blueprints.gallery.models import GalleryItem
+
   Base.metadata.create_all(engine)

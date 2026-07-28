@@ -1,12 +1,12 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import MasonryGrid from "../components/MasonryGrid";
+import GalleryGrid from "../components/GalleryGrid";
 
 const Gallery = () => {
     return (
         <>
             <Header />
-                <MasonryGrid />
+                <GalleryGrid />
             <Footer />
         </>
     )

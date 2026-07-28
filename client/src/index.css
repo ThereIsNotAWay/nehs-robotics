@@ -267,15 +267,15 @@ ul > li > a {
     padding-left: 2rem;
     padding-right: 2rem;
     height: 100%;
+    border-radius: 1.5rem;
+    border: solid;
+    border-color: var(--brand-primary-black);
 }
 
 #filters-container > button:hover {
     cursor: pointer;
     background-color: var(--brand-primary-neutral);
     color: var(--brand-primary-black);
-    border-radius: 1.5rem;
-    border: solid;
-    border-color: var(--brand-primary-black);
 }
 
 #resource > a {

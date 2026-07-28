@@ -1,3 +1,4 @@
+import os
 from os import environ
 from flask import Flask
 from flask_cors import CORS
@@ -7,6 +8,18 @@ from api.database import init_db
 
 def create_app():
   app = Flask(__name__)
+
+  with app.app_context():
+      from api.database import SessionLocal
+      from api.blueprints.gallery.models import GalleryItem
+      from api.blueprints.gallery.import_gallery import import_gallery
+  
+      db = SessionLocal()
+      if db.query(GalleryItem).count() == 0:
+          import_gallery()
+      db.close()
+
+  BACKEND_URL = os.getenv("BACKEND_URL")
 
   app.config["BCRYPT_LOG_ROUNDS"] = 14
   app.config["SECRET_KEY"] = environ["SECRET_KEY"]
@@ -18,6 +31,7 @@ def create_app():
                     CSRF_COOKIE_SECURE=True,
                     CSRF_COOKIE_HTTPONLY=False,
                     CSRF_COOKIE_SAMESITE="None", CSRF_CHECK_REFERER=True)
+  app.config["BACKEND_URL"] = BACKEND_URL
 
   init_db()
 
@@ -41,7 +55,7 @@ def create_app():
     'default-src': '\'self\'',
     'style-src': ['\'self\''],
     'script-src': ['\'self\''],
-    'img-src': ['\'self\'', 'data:'],
+    'img-src': ['\'self\'', 'data:', BACKEND_URL],
     'font-src': ['\'self\''],
     'connect-src': ['\'self\'', origin_domain],
     'frame-ancestors': '\'none\'',
@@ -50,7 +64,7 @@ def create_app():
     "form-action": '\'self\'',
   }
   Talisman(app, content_security_policy=csp,
-           force_https=True, strict_transport_security=True,
+           force_https=False, strict_transport_security=True,
            strict_transport_security_include_subdomains=True,
            strict_transport_security_preload=True)
 

@@ -4,14 +4,14 @@ from api.blueprints.resources.models import Resource
 
 resources = Blueprint('resources', __name__)
 
-@resources.route("/api/resources", methods=['GET'])
+@resources.get("/")
 def get_resources():
     session = SessionLocal()
     try: 
         category = request.args.get('category')
         query = session.query(Resource)
 
-        if (category):
+        if category:
             query = query.filter(Resource.category.contains(category))
         
         resources = query.all()

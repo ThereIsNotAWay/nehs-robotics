@@ -1,5 +1,4 @@
-import { motion, transform, useMotionValueEvent, useScroll } from 'motion/react';
-import { useState, useRef } from 'react';
+import { motion } from 'motion/react';
 
 const Header = () => {
     return (
