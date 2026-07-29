@@ -29,7 +29,7 @@ const GalleryGrid = () => {
 
     const renderImages = () => {
         if (images.length === 0) {
-            return <p className="pb-24">No images were found.</p>;
+            return <p className="pb-24">No images were found (placeholder).</p>;
         }
 
         return images.map((i, index) => (
@@ -40,11 +40,21 @@ const GalleryGrid = () => {
     }
 
     return (
-        <div id="masonry-container" className="p-20">
-            <div className="columns-1 sm:columns-2 lg:columns-3 py-10 md:py-20 gap-4">
-                {renderImages()}
+        <>
+            <div id="filter-search-container" className="flex justify-center pt-45">
+                <div id="filters-container" className="flex justify-center items-center bg-(--brand-primary-black) rounded-3xl h-13">
+                    <button onClick={() => setFilter("all")}>All</button>
+                    <button onClick={() => setFilter("FTC")}>FTC</button>
+                    <button onClick={() => setFilter("FRC")}>FRC</button>
+                    <button onClick={() => setFilter("SeaGlide")}>SeaGlide</button>
+                </div>
             </div>
-        </div>
+            <div id="gallery-container" className="p-10">
+                <div className="columns-1 sm:columns-2 lg:columns-3 py-5 gap-4">
+                    {renderImages()}
+                </div>
+            </div>
+        </>
     )
 }
 

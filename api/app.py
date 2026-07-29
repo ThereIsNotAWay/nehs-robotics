@@ -9,16 +9,6 @@ from api.database import init_db
 def create_app():
   app = Flask(__name__)
 
-  with app.app_context():
-      from api.database import SessionLocal
-      from api.blueprints.gallery.models import GalleryItem
-      from api.blueprints.gallery.import_gallery import import_gallery
-  
-      db = SessionLocal()
-      if db.query(GalleryItem).count() == 0:
-          import_gallery()
-      db.close()
-
   BACKEND_URL = os.getenv("BACKEND_URL")
 
   app.config["BCRYPT_LOG_ROUNDS"] = 14
@@ -34,6 +24,17 @@ def create_app():
   app.config["BACKEND_URL"] = BACKEND_URL
 
   init_db()
+
+  # Check if the gallery table is empty. If so, import all images using import_gallery().
+  with app.app_context():
+    from api.database import SessionLocal
+    from api.blueprints.gallery.models import GalleryItem
+    from api.blueprints.gallery.import_gallery import import_gallery
+
+    db = SessionLocal()
+    if db.query(GalleryItem).count() == 0:
+        import_gallery()
+    db.close()
 
   login_manager.init_app(app)
   bcrypt.init_app(app)

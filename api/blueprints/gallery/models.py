@@ -13,6 +13,7 @@ class GalleryItem(Base):
     src = Column(String, nullable=False)
     created_at = Column(TIMESTAMP, server_default=text("NOW()"))
 
+    # helper function to return a JSONified version of a GalleryItem entry
     def to_dict(self):
         return {
             "id": str(self.id),
