@@ -29,7 +29,7 @@ const GalleryGrid = () => {
 
     const renderImages = () => {
         if (images.length === 0) {
-            return <p className="pb-24">No images were found (placeholder).</p>;
+            return <p>No images were found (placeholder).</p>;
         }
 
         return images.map((i, index) => (

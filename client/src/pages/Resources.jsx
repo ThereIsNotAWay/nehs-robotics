@@ -1,8 +1,5 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
-
-import Header from "/src/components/Header";
-import Footer from "/src/components/Footer";
 import Resource from "/src/components/Resource";
 
 const Resources = () => {
@@ -33,7 +30,7 @@ const Resources = () => {
 
     const renderResources = () => {
         if (resources.length === 0) {
-            return <p className="pb-24">No resources were found.</p>;
+            return <p>No resources were found.</p>;
         }
 
         return resources.map(r => (
@@ -43,7 +40,6 @@ const Resources = () => {
 
     return (
         <>
-            <Header />
             <div id="resources-header" className="flex flex-col p-8 pt-40">
                 <h1 className="text-center leading-20">Viking Resources</h1>
                 <p className="text-center leading-7">Find details on competitions, beginner guides, and archived works.</p>
@@ -62,10 +58,11 @@ const Resources = () => {
                     </form>
                 </div>
             </div>
-            <div id="resources" className="p-20">
-                {renderResources()}
+            <div id="resources-container" className="flex m-auto max-w-480">
+                <div id="resources" className="p-20 w-full">
+                    {renderResources()}
+                </div>
             </div>
-            <Footer />
         </>
     )
 }
