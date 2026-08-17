@@ -48,15 +48,15 @@ const Home = () => {
             <div id="gallery-container" className="flex justify-center w-full pt-8">
                 <div id="scattered-gallery">
                     <img src="/assets/cta1.jpg" alt="Vikings taking a selfie at a competition."/>
-                    <img src="/assets/cta5.jpg" alt="Vikings taking a selfie at a competition."/>
+                    <img src="/assets/cta2.jpg" alt="Vikings working on the FRC robot pointing at the camera."/>
                     <img src="/assets/cta3.jpg" alt="Vikings gathering with their medals and trophy."/>
-                    <img src="/assets/cta6.jpg" alt="Vikings taking a selfie at a competition."/>
-                    <img className="object-[50%_30%]" src="/assets/cta7.jpg" alt="Vikings taking a selfie at a competition."/>
-                    <img src="/assets/cta2.jpg" alt="Vikings posing with their thumbs up at a competition."/>
+                    <img src="/assets/cta4.jpg" alt="Vikings working on the robot from afar."/>
+                    <img className="object-[50%_30%]" src="/assets/cta5.jpg" alt="Collectible card created by another team for the Vikings robot."/>
+                    <img src="/assets/cta6.jpg" alt="Vikings posing with their thumbs up at a competition."/>
                     <div id="gallery-redirect" className="bg-(--brand-primary-red) w-full h-full flex items-center justify-center">
                         <a id="gallery-link" className="w-full h-full text-center items-center flex justify-center text-(--brand-primary-neutral)" href="/gallery">See More in our Gallery</a>
                     </div>
-                    <img src="/assets/cta4.jpg" alt="Vikings working from afar."/>
+                    <img src="/assets/cta7.jpg" alt="."/>
                 </div>
             </div>
             <div id="call-to-action" className="flex flex-col p-20 items-center gap-2">

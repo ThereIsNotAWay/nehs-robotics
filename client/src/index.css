@@ -120,6 +120,10 @@ ul > li > a {
     box-shadow: inset 120px 0 0 0 #181811;
 }
 
+#register-redirect:hover {
+    color: var(--brand-primary-black);
+}
+
 .cta-btn {
     background-color: var(--brand-primary-neutral);
     color: var(--brand-primary-black);
