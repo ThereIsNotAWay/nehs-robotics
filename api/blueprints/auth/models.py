@@ -1,10 +1,11 @@
 from sqlalchemy import Column, String, text
 from sqlalchemy.dialects.postgresql import UUID
 from pydantic import BaseModel, Field
+from flask_login import UserMixin
 
 from api.database import Base
 
-class User(Base):
+class User(Base, UserMixin):
 
     __tablename__ = "users"
 

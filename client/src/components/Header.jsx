@@ -1,6 +1,4 @@
 import { motion } from 'motion/react';
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 
 const Header = () => {
     return (

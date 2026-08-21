@@ -11,5 +11,6 @@ SessionLocal = sessionmaker(bind=engine)
 def init_db():
   from api.blueprints.resources.models import Resource
   from api.blueprints.gallery.models import GalleryItem
+  from api.blueprints.auth.models import User
 
   Base.metadata.create_all(engine)
