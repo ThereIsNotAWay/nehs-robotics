@@ -1,0 +1,21 @@
+services:
+  frontend:
+    build: 
+      context: ./client
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"
+    depends_on:
+      backend: 
+        condition: service_started
+
+  backend:
+    build: 
+      context: ./api
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8000:8000"  
+
+  redis:
+    ports:
+      - "6379:6379"

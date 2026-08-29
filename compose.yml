@@ -1,0 +1,27 @@
+services:
+  backend:
+    build: ./api
+    restart: unless-stopped
+    environment:
+      RATELIMIT_STORAGE_URI: redis://redis:6379/0
+      DATABASE_URL: ${DATABASE_URL}
+      SECRET_KEY: ${SECRET_KEY}
+      SSLROOTCERT: /api/postgresql/root.crt
+      ORIGIN_DOMAIN: ${ORIGIN_DOMAIN}
+    volumes:
+      - ./api/postgresql/root.crt:/api/postgresql/root.crt:ro
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+
+    
