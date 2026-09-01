@@ -8,6 +8,7 @@ services:
       SECRET_KEY: ${SECRET_KEY}
       SSLROOTCERT: /api/postgresql/root.crt
       ORIGIN_DOMAIN: ${ORIGIN_DOMAIN}
+      BACKEND_URL: ${BACKEND_URL}
     volumes:
       - ./api/postgresql/root.crt:/api/postgresql/root.crt:ro
     depends_on:

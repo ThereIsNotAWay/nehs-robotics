@@ -14,15 +14,15 @@ def load_user(user_id):
   with SessionLocal() as session:
     return session.scalar(select(User).where(User.id==user_id))
 
-@auth.route('/me')
+@auth.route('/me', methods=['GET'])
 def me():
   if current_user.is_authenticated:
     return jsonify({"authenticated": True, "user": {"name": current_user.name, "role": current_user.role}}), 200
   return jsonify({"authenticated": False}), 200
 
-@auth.route('/csrf-token')
+@auth.route('/csrf-token', methods=['GET'])
 def get_csrf_token():
-  return jsonify({"csrf_token": seasurf._get_token()})
+  return jsonify({"csrf_token": seasurf._get_token()}), 200
 
 @auth.route('/logout', methods=['POST'])
 @limiter.limit("5 per minute")
@@ -55,7 +55,7 @@ def login():
     return jsonify({"success": False, "message": "Invalid credentials!"}), 400
 
   except BadRequest:
-    return jsonify({"success": False, "message": "Malformed JSON"})
+    return jsonify({"success": False, "message": "Malformed JSON"}), 400
 
 @auth.route('/signup', methods=['POST'])
 @limiter.limit("5 per minute")

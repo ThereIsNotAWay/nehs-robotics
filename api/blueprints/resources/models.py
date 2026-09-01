@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, text
+from sqlalchemy import Column, String, text, TIMESTAMP
 from sqlalchemy.dialects.postgresql import UUID
 
 from api.database import Base
@@ -11,3 +11,4 @@ class Resource(Base):
     title = Column(String, nullable=False)
     description = Column(String, nullable=False)
     link = Column(String, nullable=False)
+    created_at = Column(TIMESTAMP, server_default=text("NOW()"))
