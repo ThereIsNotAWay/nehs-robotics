@@ -116,8 +116,10 @@ export const AuthProvider = ({children}) => {
         }
     }
 
+    // Add reset password & maybe email connections to accounts.
+
     return (
-        <AuthContext.Provider value={{user, login, signup, logout, fetchCurrUser}}>
+        <AuthContext.Provider value={{user, login, signup, logout, fetchCurrUser, getCSRFToken}}>
             {children}
         </AuthContext.Provider>
     );

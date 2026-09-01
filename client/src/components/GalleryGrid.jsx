@@ -1,9 +1,16 @@
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
+import FilterButtons from "./FilterButtons";
 
 const GalleryGrid = () => {
     const [currFilter, setFilter] = useState("all");
     const [images, setImages] = useState([]);
+    const FILTERS = [
+        {label: "All", filter: "all"},
+        {label: "FTC", filter: "FTC"},
+        {label: "FRC", filter: "FRC"},
+        {label: "SeaGlide", filter: "SeaGlide"}
+    ];
 
     useEffect(() => {
         const fetchImages = async () => {
@@ -42,12 +49,7 @@ const GalleryGrid = () => {
     return (
         <>
             <div id="filter-search-container" className="flex justify-center pt-45">
-                <div id="filters-container" className="flex justify-center items-center bg-(--brand-primary-black) rounded-3xl h-13">
-                    <button onClick={() => setFilter("all")}>All</button>
-                    <button onClick={() => setFilter("FTC")}>FTC</button>
-                    <button onClick={() => setFilter("FRC")}>FRC</button>
-                    <button onClick={() => setFilter("SeaGlide")}>SeaGlide</button>
-                </div>
+                <FilterButtons filters={FILTERS} currFilter={currFilter} onChange={setFilter} />
             </div>
             <div id="gallery-container" className="p-10">
                 <div className="columns-1 sm:columns-2 lg:columns-3 py-5 gap-4">

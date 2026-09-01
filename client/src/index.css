@@ -141,6 +141,36 @@ ul > li > a {
     border-color: #73060A;
 }
 
+#login-btn {
+    background-color: var(--brand-primary-black);
+    color: var(--brand-primary-neutral);
+    border: 1px solid var(--brand-primary-neutral);
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 var(--brand-primary-black);
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+#login-btn:hover {
+    box-shadow: inset 175px 0 0 0 #73060A;
+    color: var(--brand-primary-neutral);
+    border-color: #73060A;
+}
+
+#sign-btn {
+    background-color: var(--brand-primary-neutral);
+    color: var(--brand-primary-black);
+    border: 1px solid var(--brand-primary-neutral);
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 var(--brand-primary-neutral);
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+#sign-btn:hover {
+    box-shadow: inset 175px 0 0 0 #73060A;
+    color: var(--brand-primary-neutral);
+    border-color: #73060A;
+}
+
 .sparc-btn {
     background-color: var(--brand-primary-neutral);
     color: var(--brand-primary-black);
@@ -262,10 +292,6 @@ ul > li > a {
     border-width: 2px;
 }
 
-#filters-container > p {
-    color: var(--brand-primary-neutral);
-}
-
 #filters-container > button {
     color: var(--brand-primary-neutral);
     padding-left: 2rem;
@@ -274,12 +300,6 @@ ul > li > a {
     border-radius: 1.5rem;
     border: solid;
     border-color: var(--brand-primary-black);
-}
-
-#filters-container > button:hover {
-    cursor: pointer;
-    background-color: var(--brand-primary-neutral);
-    color: var(--brand-primary-black);
 }
 
 #resource > a {
@@ -304,4 +324,23 @@ ul > li > a {
 
 #SPARC {
     width: 6.5rem;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0%;
+    }
+    100% {
+        background-position: -200% 0%;
+    }
+}
+
+.skeleton-shimmer {
+    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.75s linear infinite;
+}
+
+#resource > a:hover {
+    text-decoration: underline;
 }
