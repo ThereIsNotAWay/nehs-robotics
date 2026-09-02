@@ -25,7 +25,7 @@ export const useResources = (filter = "all") => {
             if (currFilter === "all") {
                 url = '/api/resources/';
             } else {
-                url = `/api/resources?category=${currFilter}/`;
+                url = `/api/resources/?category=${currFilter}`;
             }
 
             try {

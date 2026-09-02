@@ -52,7 +52,7 @@ const Login = () => {
                             {error}
                         </motion.p>
                     )}
-                    <motion.button whileHover={{ backgroundColor: "rgba(0, 0, 0, 0.95)" }} whileTap={{ scale: 0.95 }} transition={{ ease: "easeInOut" }} type="submit" id="login-btn" className="mt-4 bg-(--brand-primary-red) text-(--brand-primary-neutral) pt-2 pb-2 pl-6 pr-6 rounded-xl cursor-pointer">Login</motion.button>
+                    <motion.button whileHover={{ backgroundColor: "rgba(0, 0, 0, 0.95)" }} whileTap={{ scale: 0.95 }} transition={{ ease: "easeInOut" }} type="submit" className="mt-4 bg-(--brand-primary-red) text-(--brand-primary-neutral) pt-2 pb-2 pl-6 pr-6 rounded-xl cursor-pointer">Login</motion.button>
                     <a id="register-redirect" href="/signup" className="mt-4 text-(--brand-primary-red) underline">Need an account? Register here.</a>
                 </div>
             </form>
