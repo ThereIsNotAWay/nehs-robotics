@@ -12,7 +12,7 @@ const User = () => {
 
     return (
         <>
-            <div id="current-user-container" className="flex gap-4 p-8 bg-(--brand-primary-black) text-(--brand-primary-neutral) items-center">
+            <div id="current-user-container" className="max-w-480 w-full m-auto flex gap-4 p-8 bg-(--brand-primary-black) text-(--brand-primary-neutral) items-center">
                 {user ? (
                     <>
                         <p>Hello, {user.name}!</p>

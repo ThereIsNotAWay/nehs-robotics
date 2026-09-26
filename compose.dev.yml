@@ -5,6 +5,9 @@ services:
       dockerfile: Dockerfile.dev
     ports:
       - "5173:5173"
+    environment:
+      VITE_CLOUDINARY_CLOUD_NAME: ${VITE_CLOUDINARY_CLOUD_NAME}
+      VITE_CLOUDINARY_API_KEY: ${VITE_CLOUDINARY_API_KEY}
     depends_on:
       backend: 
         condition: service_started
@@ -14,7 +17,7 @@ services:
       context: ./api
       dockerfile: Dockerfile.dev
     ports:
-      - "8000:8000"  
+      - "8000:8000"
 
   redis:
     ports:

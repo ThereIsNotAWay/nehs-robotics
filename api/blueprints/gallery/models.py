@@ -32,6 +32,7 @@ class ImageCategory(str, Enum):
     FTC = "FTC"
     FRC = "FRC"
     SEAGLIDE = "SeaGlide"
+    ALL = "all"
 
 class ImageUpload(BaseModel):
     public_id: str

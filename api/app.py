@@ -25,17 +25,6 @@ def create_app():
 
   init_db()
 
-  # Check if the gallery table is empty. If so, import all images using import_gallery().
-  # with app.app_context():
-  #   from api.database import SessionLocal
-  #   from api.blueprints.gallery.models import GalleryItem
-  #   from api.blueprints.gallery.import_gallery import import_gallery
-
-  #   db = SessionLocal()
-  #   if db.query(GalleryItem).count() == 0:
-  #       import_gallery()
-  #   db.close()
-
   login_manager.init_app(app)
   bcrypt.init_app(app)
   limiter.init_app(app)
@@ -55,7 +44,7 @@ def create_app():
   csp = {
     'default-src': '\'self\'',
     'style-src': ['\'self\''],
-    'script-src': ['\'self\''],
+    'script-src': ['\'self\'', 'https://upload-widget.cloudinary.com'],
     'img-src': ['\'self\'', 'data:', BACKEND_URL],
     'font-src': ['\'self\''],
     'connect-src': ['\'self\'', origin_domain],

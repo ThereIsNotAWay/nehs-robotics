@@ -56,7 +56,10 @@ export const useResources = (filter = "all") => {
         };
 
         fetchResources();
-        return () => controller.abort();
+        return () => {
+            controller.abort();
+            clearTimeout(loadingTimeout);
+        };
     }, [currFilter, refetchIndex]);
 
     const createResource = useCallback(async (form) => {

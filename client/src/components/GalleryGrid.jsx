@@ -1,10 +1,34 @@
-import { motion } from "motion/react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useAuth } from "../utils/AuthContext";
+import { useGallery } from "../utils/useGallery";
 import FilterButtons from "./FilterButtons";
+import GalleryImage from "./GalleryImage";
+import MetadataModal from "./MetadataModal";
+import GallerySkeleton from "./GallerySkeleton";
+
+/**
+ * Generates a default title for images based on its position in the array and the current timestamp.
+ * @param {*} sequenceNumber current index in the sequence of images.
+ * @returns a string to be used as an image's title.
+ */
+const buildDefaultTitle = (sequenceNumber) => {
+    const now = new Date();
+    const seq = String(sequenceNumber).padStart(2, "0");
+    const month = String(now.getMonth() + 1).padStart(2, "0");
+    const day = String(now.getDate()).padStart(2, "0");
+    const hours = String(now.getHours()).padStart(2, "0");
+    const minutes = String(now.getMinutes()).padStart(2, "0");
+
+    return `Image-${seq}-${month}-${day}-${hours}${minutes}`;
+};
 
 const GalleryGrid = () => {
-    const [currFilter, setFilter] = useState("all");
-    const [images, setImages] = useState([]);
+    const { user } = useAuth();
+    const { currFilter, setFilter, images, loading, error, openUploadWidget, saveImage, deleteImage } = useGallery();
+    const [modalOpen, setModalOpen] = useState(false);
+    const [uploadQueue, setUploadQueue] = useState([]);
+    const [total, setTotal] = useState(0);
+
     const FILTERS = [
         {label: "All", filter: "all"},
         {label: "FTC", filter: "FTC"},
@@ -12,50 +36,103 @@ const GalleryGrid = () => {
         {label: "SeaGlide", filter: "SeaGlide"}
     ];
 
-    useEffect(() => {
-        const fetchImages = async () => {
-            let url = currFilter;
-
-            if (currFilter === "all") {
-                url = '/api/gallery';
-            } else {
-                url = `/api/gallery?category=${currFilter}`;
+    const handleUpload = async () => {
+        try {
+            const results = await openUploadWidget();
+            if (results.length > 0) {
+                setUploadQueue(results);
+                setModalOpen(true);
+                setTotal(results.length);
             }
-
-            const res = await fetch(url);
-
-            if (!res.ok) {
-                throw new Error(`${res.status}`);
-            }
-
-            const data = await res.json();
-            setImages(data);
+        } catch (err) {
+            console.error("Upload widget error:", err);
         }
-        fetchImages();
-    }, [currFilter]);
+    };
+
+    const handleAdvance = () => {
+        setUploadQueue(prev => prev.slice(1));
+    }
+
+    const handleSkip = async (skipForm, cloudinaryInfo) => {
+        try {
+            await saveImage(cloudinaryInfo, skipForm);
+        } catch (err) {
+            console.error("Failed to save skipped image:", err);
+        } finally {
+            handleAdvance();
+        }
+    };
+
+    const handleSkipAll = async () => {
+        const remainingUploads = [...uploadQueue];
+        const start = total - remainingUploads.length + 1;
+
+        setModalOpen(false);
+        setUploadQueue([]);
+        setTotal(0);
+
+        for (let i = 0; i < remainingUploads.length; i++) {
+            try {
+                await saveImage(remainingUploads[i], {
+                    category: "all",
+                    title: buildDefaultTitle(start + i),
+                    description: "No description provided."
+                });
+            } catch (err) {
+                console.error("Failed to save skipped image:", err);
+            }
+        }
+    }
+
+    const handleClose = async () => {
+        const abandoned = [...uploadQueue];
+        setModalOpen(false);
+        setUploadQueue([]);
+        setTotal(0);
+
+        for (const cloudinaryInfo of abandoned) {
+            try {
+                await deleteImage(cloudinaryInfo.public_id);
+            } catch (err) {
+                console.error("Failed to clean up abandoned upload:", err);
+            }
+        }
+    };
 
     const renderImages = () => {
-        if (images.length === 0) {
-            return <p>No images were found (placeholder).</p>;
+        if (loading) {
+            return Array.from({ length: 6 }).map((_, i) => (
+                <GallerySkeleton key={i} />
+            ));
         }
 
-        return images.map((i, index) => (
-            <div key={index} className="mb-4 break-inside-avoid overflow-hidden">
-                <motion.img whileHover={{ filter: "brightness(0.75)", scale: 1.05 }} loading="lazy" src={i.src} className="w-200 aspect-square object-cover cursor-pointer"/>
-            </div>
+        if (error) {
+            return <p>{error}</p>;
+        }
+
+        if (images.length === 0) {
+            return <p>No images were found.</p>;
+        }
+
+        return images.map((img) => (
+            <GalleryImage key={img.id} image={img} onDelete={deleteImage} />
         ));
-    }
+    };
 
     return (
         <>
-            <div id="filter-search-container" className="flex justify-center pt-45">
+            <div id="filter-search-container" className="flex justify-center items-center gap-4 pt-45">
                 <FilterButtons filters={FILTERS} currFilter={currFilter} onChange={setFilter} />
+                {user && (
+                    <button onClick={handleUpload} className="bg-(--brand-primary-red) text-white h-13 px-6 rounded-3xl cursor-pointer flex gap-1 items-center">Upload<img src="/assets/cloud_upload_white.svg" alt="upload icon" className="w-5 h-5"/></button>
+                )}
             </div>
-            <div id="gallery-container" className="p-10">
-                <div className="columns-1 sm:columns-2 lg:columns-3 py-5 gap-4">
+            <div id="gallery-container" className="p-10 w-full">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
                     {renderImages()}
                 </div>
             </div>
+            <MetadataModal isOpen={modalOpen && uploadQueue.length > 0} close={handleClose} cloudinaryInfo={uploadQueue[0]} save={saveImage} onSave={handleAdvance} onSkip={handleSkip} onSkipAll={handleSkipAll} remaining={uploadQueue.length} total={total} />
         </>
     )
 }

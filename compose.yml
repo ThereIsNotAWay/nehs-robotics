@@ -9,6 +9,9 @@ services:
       SSLROOTCERT: /api/postgresql/root.crt
       ORIGIN_DOMAIN: ${ORIGIN_DOMAIN}
       BACKEND_URL: ${BACKEND_URL}
+      CLOUDINARY_CLOUD_NAME: ${CLOUDINARY_CLOUD_NAME}
+      CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY}
+      CLOUDINARY_API_SECRET: ${CLOUDINARY_API_SECRET}
     volumes:
       - ./api/postgresql/root.crt:/api/postgresql/root.crt:ro
     depends_on:
