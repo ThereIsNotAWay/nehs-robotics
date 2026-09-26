@@ -12,17 +12,19 @@ const User = () => {
 
     return (
         <>
-            <div id="current-user-container" className="max-w-480 w-full m-auto flex gap-4 p-8 bg-(--brand-primary-black) text-(--brand-primary-neutral) items-center">
+            <div id="current-user-container" className="max-w-480 w-full m-auto flex flex-col sm:flex-row gap-4 p-6 bg-(--brand-primary-black) text-(--brand-primary-neutral) items-center">
                 {user ? (
                     <>
-                        <p>Hello, {user.name}!</p>
-                        <button id="sign-btn" className="text-(--brand-primary-red) cursor-pointer pl-8 pr-8 pt-2 pb-2" onClick={handleLogout}>Sign Out</button>
+                        <p className="min-w-0">Hello, {user.name}!</p>
+                        <button id="sign-btn" className="text-(--brand-primary-red) cursor-pointer px-4 sm:px-8 py-2" onClick={handleLogout}>Sign Out</button>
                     </>
                 ) : (
                     <>
                         <p>Not currently signed in.</p>
-                        <a href="/login" id="login-btn" className="text-(--brand-primary-red) cursor-pointer pl-8 pr-8 pt-2 pb-2">Login</a>
-                        <a href="/signup" id="sign-btn" className="text-(--brand-primary-red) cursor-pointer pl-8 pr-8 pt-2 pb-2">Register</a>
+                        <div className="flex flex-wrap items-center gap-2 sm:gap-4">
+                            <a href="/login" id="login-btn" className="text-(--brand-primary-red) cursor-pointer px-4 sm:px-8 py-2">Login</a>
+                            <a href="/signup" id="sign-btn" className="text-(--brand-primary-red) cursor-pointer px-4 sm:px-8 py-2">Register</a>
+                        </div>
                     </>
                 )}
             </div>

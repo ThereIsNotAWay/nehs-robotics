@@ -22,7 +22,8 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="xl:pr-6 pr-0 w-full xl:w-[65%]">
-                        <div id="landing-images" className="flex overflow-hidden rounded-2xl border-2 h-auto md:h-120">                            <img className="aspect-9/16 min-w-0 flex-1 object-cover" src="/assets/landingPhoto1.jpg" alt="Vikings Robotics students at an event." />
+                        <div id="landing-images" className="flex overflow-hidden rounded-2xl border-2 h-auto md:h-120">
+                            <img className="aspect-9/16 min-w-0 flex-1 object-cover" src="/assets/landingPhoto1.jpg" alt="Vikings Robotics students at an event." />
                             <img className="aspect-9/16 min-w-0 flex-1 object-cover" src="/assets/landingPhoto2.jpg" alt="Vikings Robotics students working together." />
                             <img className="aspect-9/16 min-w-0 flex-1 object-cover object-[66%]" src="/assets/landingPhoto3.jpg" alt="Vikings Robotics team members." />
                         </div>
