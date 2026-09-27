@@ -27,7 +27,7 @@ const Resources = () => {
         }
 
         if (error) {
-            return <p>{error}</p>;
+            return <p className="text-center xl:px-0 px-8">{error}</p>;
         }
 
         if (resources.length === 0) {
@@ -41,26 +41,30 @@ const Resources = () => {
 
     return (
         <>
-            <div id="resources-header" className="flex flex-col p-4 pt-40">
-                <h1 className="text-center leading-20">Viking Resources</h1>
-                <p className="text-center leading-7">Find details on competitions, beginner guides, and archived works.</p>
+            <div className="flex justify-center items-center m-auto">
+                <div id="resources-header" className="flex flex-col p-2 pt-40 w-fit text-center">
+                    <h1 className="text-center leading-20">Viking Resources</h1>
+                    <p className="text-center leading-7">Find details on competitions, beginner guides, and archived works.</p>
+                </div>
             </div>
-            <div id="filter-search-container" className="p-12 flex justify-between">
+            <div id="filter-search-container" className="flex justify-center items-center max-w-full py-10 px-2">
                 <FilterButtons filters={FILTERS} currFilter={currFilter} onChange={setFilter} />
                 {user && (
                     <motion.button onClick={() => setModalOpen(true)} whileHover={{backgroundColor: "rgba(24, 24, 17, 1)"}} whileTap={{scale: 0.95}} transition={{duration: 0.2}} className="bg-(--brand-primary-red) text-(--brand-primary-neutral) pt-2 pb-2 pl-6 pr-6 rounded-3xl cursor-pointer">
                         + Create New
                     </motion.button>
                 )}
+                {/*
                 <div className="search-bar-container flex items-center">
                     <form action="/search.html" method="GET" className="search-bar flex justify-center items-center p-1 rounded-3xl gap-1">
                         <input type="text" placeholder="Enter a search term" name="query" className="w-100 h-8 rounded-3xl p-4"/>
                         <button type="submit" className="cursor-pointer bg-(--brand-primary-red) rounded-3xl w-19 h-10 flex justify-center items-center"><img src="/assets/search.svg" alt="search icon"/></button>
                     </form>
                 </div>
+                */}
             </div>
-            <div id="resources-container" className="flex m-auto max-w-480">
-                <div id="resources" className="pl-20 pr-20 pt-8 pb-16 w-full">
+            <div id="resources-container" className="flex justify-center items-center">
+                <div id="resources" className="xl:px-24 px-8 pt-4 pb-16 w-full">
                     {renderResources()}
                 </div>
             </div>

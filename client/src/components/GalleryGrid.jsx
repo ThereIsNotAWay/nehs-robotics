@@ -121,13 +121,13 @@ const GalleryGrid = () => {
 
     return (
         <>
-            <div id="filter-search-container" className="flex justify-center items-center gap-4 pt-45">
+            <div id="filter-search-container" className="flex justify-center items-center gap-4 pt-46 max-w-full px-2">
                 <FilterButtons filters={FILTERS} currFilter={currFilter} onChange={setFilter} />
                 {user && (
                     <button onClick={handleUpload} className="bg-(--brand-primary-red) text-white h-13 px-6 rounded-3xl cursor-pointer flex gap-1 items-center">Upload<img src="/assets/cloud_upload_white.svg" alt="upload icon" className="w-5 h-5"/></button>
                 )}
             </div>
-            <div id="gallery-container" className="p-10 w-full">
+            <div id="gallery-container" className="py-14 xl:px-24 md:px-24 px-8 w-full">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
                     {renderImages()}
                 </div>
