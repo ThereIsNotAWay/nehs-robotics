@@ -12,7 +12,7 @@ const User = () => {
 
     return (
         <>
-            <div id="current-user-container" className="max-w-480 w-full m-auto flex flex-col sm:flex-row gap-4 p-6 bg-(--brand-primary-black) text-(--brand-primary-neutral) items-center">
+            <div id="current-user-container" className="max-w-480 w-full m-auto justify-between flex flex-col sm:flex-row gap-4 p-6 bg-(--brand-primary-black) text-(--brand-primary-neutral) items-center">
                 {user ? (
                     <>
                         <p className="min-w-0">Hello, {user.name}!</p>

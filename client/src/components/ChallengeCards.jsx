@@ -45,11 +45,13 @@ const ChallengeLinks = {
 
 const ChallengeCards = ({ challenge }) => {
     return (
-        <motion.div whileHover={{ scale: 1.05, transition: { duration: 0.2 } }} className="card flex flex-col w-100 h-175 items-center justify-center text-center p-8 gap-4">
-            <img src={ChallengeLookup[challenge]} alt={`Example ${challenge} Robot`}/>
-            <h3 className="leading-8">{ChallengeHeaders[challenge]}</h3>
-            <p className="w-70 leading-7 pb-2">{ChallengeDescriptions[challenge]}</p>
-            <motion.a whileTap={{ scale: 0.95 }} target="_blank" rel="noopener noreferrer" href={ChallengeLinks[challenge]} className="bg-(--brand-primary-red) text-(--brand-primary-neutral) pl-12 pr-12 pt-2 pb-2 rounded-xl ring-(--brand-primary-red) hover:bg-(--brand-primary-neutral) hover:ring-2 hover:ring-(--brand-primary-black) hover:text-(--brand-primary-black)">Read More</motion.a>
+        <motion.div whileHover={{ scale: 1.05, transition: {duration: 0.2 } }} className="card flex w-full max-w-180 min-h-80 h-auto flex-col items-center justify-center text-center p-8 sm:p-8 gap-4 xl:w-100 xl:h-175 xl:max-w-none">
+            <img className="block w-full max-w-60 h-auto object-contain xl:w-auto" src={ChallengeLookup[challenge]} alt={`Example ${challenge} Robot`}/>
+            <div className="flex min-w-0 w-full flex-col items-center justify-center text-center gap-2 xl:gap-4">
+                <h3 className="max-w-full text-xl sm:text-2xl leading-tight wrap-break-word">{ChallengeHeaders[challenge]}</h3>
+                <p className="w-full max-w-70 leading-7 pb-2">{ChallengeDescriptions[challenge]}</p>
+                <motion.a whileTap={{ scale: 0.95 }} target="_blank" rel="noopener noreferrer" href={ChallengeLinks[challenge]} className="bg-(--brand-primary-red) text-(--brand-primary-neutral) pl-12 pr-12 pt-2 pb-2 rounded-xl ring-(--brand-primary-red) hover:bg-(--brand-primary-neutral) hover:ring-2 hover:ring-(--brand-primary-black) hover:text-(--brand-primary-black)">Read More</motion.a>
+            </div>
         </motion.div>
     )
 };

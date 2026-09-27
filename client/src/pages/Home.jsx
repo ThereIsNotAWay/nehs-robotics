@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 
 const Home = () => {
     return (
-        <div className="max-w-480 mx-auto xl:pt-12 md:pt-28 pt-24">
+        <div className="max-w-480 mx-auto xl:pt-12 pt-28">
             <div id="landing" className="flex items-center justify-center h-dvh max-h-360">
                 <div id="main-hook" className="flex w-full flex-col items-center justify-center rounded-xl p-4 gap-8 xl:flex-row xl:gap-0">
                     <div className="flex flex-col justify-center items-center xl:items-start">
