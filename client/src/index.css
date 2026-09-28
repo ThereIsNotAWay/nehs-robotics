@@ -282,16 +282,77 @@ ul > li > a {
     contain: content;
 }
 
+#about-landing h6 {
+    font-size: clamp(2rem, 15vw, 12rem);
+    line-height: clamp(2.5rem, 15.625vw, 12.5rem);
+}
+
+#stat-highlight h3 {
+    font-size: clamp(1.25rem, 3.125vw, 2rem);
+    line-height: clamp(1.75rem, 3.90625vw, 2.5rem);
+}
+
+#mission-text h1 {
+    font-size: clamp(1.75rem, 3.4375vw, 2.75rem);
+}
+
+#mission-text p {
+    font-size: clamp(1rem, 1.5625vw, 1.25rem);
+}
+
 #mission-statement > img {
-    width: 708px;
-    height: 402px;
-    position: absolute;
+    width: 100%;
+    max-width: 708px;
+    height: auto;
     filter: drop-shadow(-10px 10px 10px #181811);
+}
+
+@media (min-width: 1440px) {
+    #mission-statement > img {
+        width: 708px;
+        height: 402px;
+        position: absolute;
+    }
 }
 
 #address-text {
     border-left: solid #73060A 0.4rem;
-    padding: 3rem;
+    padding: 1.5rem;
+}
+
+#address-text h1 {
+    font-size: clamp(1.75rem, 3.4375vw, 2.75rem);
+    line-height: clamp(2rem, 4.0625vw, 3.25rem);
+}
+
+#address-text p {
+    font-size: clamp(1rem, 1.5625vw, 1.25rem);
+}
+
+#about-text h1 {
+    font-size: clamp(1.75rem, 3.4375vw, 2.75rem);
+}
+
+#about-text p {
+    font-size: clamp(1rem, 1.5625vw, 1.25rem);
+}
+
+#about-sparc > a {
+    font-size: clamp(1rem, 1.5625vw, 1.25rem);
+}
+
+#social-callout-text h1 {
+    font-size: clamp(1.75rem, 3.4375vw, 2.75rem);
+}
+
+#social-callout-text p {
+    font-size: clamp(1rem, 1.5625vw, 1.25rem);
+}
+
+@media (min-width: 900px) {
+    #address-text {
+        padding: 3rem;
+    }
 }
 
 #SPARC {
