@@ -14,7 +14,7 @@ const Signup = () => {
     const [error, setError] = useState("");
     const passMatch = confirmPassword.length === 0 || password === confirmPassword;
 
-    const toggleVisibility = (input) => {
+    const toggleVisibility = () => {
         if (type === "password") {
             setType("text");
             setLabel("Hide Password");
@@ -57,15 +57,15 @@ const Signup = () => {
                         <span className="text-(--brand-primary-red)">Passwords do not match.</span>
                     )}
                     <div id="pass-reveal" className="flex gap-2 items-center">
-                        <input type="checkbox" onClick={toggleVisibility} />
-                        <label htmlFor="checkbox">{label}</label>
+                        <input type="checkbox" id="show-password" onClick={toggleVisibility} />
+                        <label htmlFor="show-password">{label}</label>
                     </div>
                     {error && (
                         <motion.p initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} transition={{ duration: 0.15 }} className="text-(--brand-primary-red)" role="alert">
                             {error}
                         </motion.p>
                     )}
-                    <motion.button whileHover={{ backgroundColor: "rgba(0, 0, 0, 0.95)" }} whileTap={{ scale: 0.95 }} transition={{ ease: "easeInOut" }} type="submit" id="login-btn" className="mt-4 bg-(--brand-primary-red) text-(--brand-primary-neutral) pt-2 pb-2 pl-6 pr-6 rounded-xl cursor-pointer">Register</motion.button>
+                    <motion.button whileHover={{ backgroundColor: "rgba(0, 0, 0, 0.95)" }} whileTap={{ scale: 0.95 }} transition={{ ease: "easeInOut" }} type="submit" className="mt-4 bg-(--brand-primary-red) text-(--brand-primary-neutral) pt-2 pb-2 pl-6 pr-6 rounded-xl cursor-pointer">Register</motion.button>
                 </div>
             </form>
         </>

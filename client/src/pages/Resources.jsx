@@ -47,7 +47,7 @@ const Resources = () => {
                     <p className="text-center leading-7">Find details on competitions, beginner guides, and archived works.</p>
                 </div>
             </div>
-            <div id="filter-search-container" className="flex justify-center items-center max-w-full py-10 px-2">
+            <div id="filter-search-container" className="flex justify-center items-center max-w-full py-10 px-2 flex-col sm:flex-row gap-4">
                 <FilterButtons filters={FILTERS} currFilter={currFilter} onChange={setFilter} />
                 {user && (
                     <motion.button onClick={() => setModalOpen(true)} whileHover={{backgroundColor: "rgba(24, 24, 17, 1)"}} whileTap={{scale: 0.95}} transition={{duration: 0.2}} className="bg-(--brand-primary-red) text-(--brand-primary-neutral) pt-2 pb-2 pl-6 pr-6 rounded-3xl cursor-pointer">

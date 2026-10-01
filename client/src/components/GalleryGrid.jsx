@@ -121,7 +121,7 @@ const GalleryGrid = () => {
 
     return (
         <>
-            <div id="filter-search-container" className="flex justify-center items-center gap-4 pt-46 max-w-full px-2">
+            <div id="filter-search-container" className="flex justify-center items-center gap-4 pt-46 max-w-full px-2 flex-col sm:flex-row">
                 <FilterButtons filters={FILTERS} currFilter={currFilter} onChange={setFilter} />
                 {user && (
                     <button onClick={handleUpload} className="bg-(--brand-primary-red) text-white h-13 px-6 rounded-3xl cursor-pointer flex gap-1 items-center">Upload<img src="/assets/cloud_upload_white.svg" alt="upload icon" className="w-5 h-5"/></button>

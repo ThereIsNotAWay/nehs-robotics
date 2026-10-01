@@ -44,8 +44,8 @@ const Login = () => {
                     <label htmlFor="password">Password</label>
                     <input type={type} id="password" value={password} onChange={(e) => setPassword(e.target.value)} required minLength={12} maxLength={128} className="border-2 rounded-lg p-2"/>
                     <div id="pass-reveal" className="flex gap-2 items-center">
-                        <input type="checkbox" onClick={toggleVisibility} />
-                        <label htmlFor="checkbox">{label}</label>
+                        <input type="checkbox" id="show-password" onClick={toggleVisibility} />
+                        <label htmlFor="show-password">{label}</label>
                     </div>
                     {error && (
                         <motion.p key="login-error" initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.15 }} className="text-(--brand-primary-red)" role="alert">
